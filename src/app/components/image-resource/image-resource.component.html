@@ -1,0 +1,4 @@
+<div class="image__wrap" (deferLoad)="displayImage()">
+  <img *ngIf="!showImage && lazy" class="image__placeholder" [src]="placeholder" [alt]="alt" [width]="width" [height]="height">
+  <img *ngIf="showImage || !lazy" class="image" [src]="src" [alt]="alt" [width]="width" [height]="height">
+</div>

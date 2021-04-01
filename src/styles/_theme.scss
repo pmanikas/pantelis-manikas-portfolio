@@ -1,0 +1,40 @@
+@import './variables/colors';
+@import './variables/sizes';
+@import './variables/layers';
+@import './variables/mixins';
+
+.container {
+  width: 100%;
+  padding: 0 $s-xs;
+  margin: 0 auto;
+}
+
+.section {
+  margin-top: $s-m;
+  margin-bottom: $s-m;
+}
+
+.accent {
+  color: $c-primary;
+}
+
+@include tablet {
+  .container {
+    width: $s-tablet;
+    padding: 0 $s-s;
+  }
+}
+
+@include desktop {
+  .container {
+    width: $s-desktop;
+    padding: 0 $s-m;
+  }
+}
+
+@include widescreen {
+  .container {
+    width: $s-widescreen;
+    padding: 0 $s-l;
+  }
+}

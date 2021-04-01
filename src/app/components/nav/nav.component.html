@@ -1,0 +1,21 @@
+<nav class="nav">
+  <ul class="nav__list" [ngClass]="[isNavOpen ? 'nav__list--active' : '']">
+    <li class="nav__item">
+      <a class="nav__link" [routerLink]="['/about']">About</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" [routerLink]="['/projects']">Projects</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" [routerLink]="['/blog']">Blog</a>
+    </li>
+    <li class="nav__item nav__item--contact">
+      <a class="nav__link" [routerLink]="['/contact']">Contact</a>
+    </li>
+  </ul>
+  <div class="nav__button" [ngClass]="[isNavOpen ? 'nav__button--active' : '']" (click)="toggleNav()">
+    <span class="nav__button__inner"></span>
+    <span class="nav__button__inner"></span>
+    <span class="nav__button__inner"></span>
+  </div>
+</nav>

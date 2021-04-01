@@ -1,0 +1,7 @@
+@use './../../../styles/theme' as *;
+
+.credits {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+  color: transparentize($c-white, 0.5);
+}

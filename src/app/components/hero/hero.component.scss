@@ -1,0 +1,48 @@
+@use './../../../styles/theme' as *;
+
+$image-size: 300px;
+
+.hero {
+  display: flex;
+  min-height: calc(100vh - #{$s-header-height});
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: $s-xl 0;
+  &__details {
+    max-width: 520px;
+    flex-basis: 50%;
+  }
+  &__header {
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+  }
+  &__description {
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+  &__collage {
+    display: flex;
+    justify-content: center;
+    flex-basis: 50%;
+  }
+}
+
+.image__container {
+  width: $image-size;
+  height: $image-size;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.image {
+  width: $image-size;
+  height: $image-size;
+  object-fit: cover;
+}
+
+
+@include desktop {
+  .hero {
+    flex-direction: row;
+  }
+}

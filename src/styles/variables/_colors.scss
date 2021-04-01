@@ -1,0 +1,19 @@
+// Color Names inspired by https://chir.ag/projects/name-that-color
+$c-white: #ffffff;
+$c-black: #000000;
+
+$c-blue-ribbon: #3340FF;
+$c-azure-radiance: #0087fe;
+$c-bright-turquoise: #00E9D0;
+$c-green: #16fa29;
+$c-radical-red: #FF3366;
+$c-french-rose: #EA4C89;
+
+// Theme
+$c-primary: $c-blue-ribbon;
+$c-primary-faded: $c-azure-radiance;
+$c-secondary: $c-radical-red;
+$c-secondary-faded: $c-french-rose;
+
+// Elements
+$c-faded-text: transparentize($c-black, 0.2);

@@ -1,0 +1,22 @@
+// SIZES
+$s-xxs: 0.1rem;
+$s-xs: 0.2rem;
+$s-s: 0.3rem;
+$s-m: 0.5rem;
+$s-l: 0.8rem;
+$s-xl: 1.3rem;
+$s-xxl: 2.1rem;
+$s-xxxl: 3.4rem;
+
+// BREAKPOINTS
+$s-large-mobile: 375px;
+$s-mobile-landscape: 480px;
+$s-tablet: 768px;
+$s-desktop: 992px;
+$s-widescreen: 1200px;
+$s-largescreen: 1680px;
+
+// ELEMENTS SPACING
+$base-spacing: $s-l;
+$section-spacing: $s-xl;
+$s-header-height: $s-xxl;

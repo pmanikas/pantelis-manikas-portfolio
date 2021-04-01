@@ -1,0 +1,6 @@
+@use './../styles/theme' as *;
+
+.main {
+  position: relative;
+  margin-top: $s-header-height;
+}
