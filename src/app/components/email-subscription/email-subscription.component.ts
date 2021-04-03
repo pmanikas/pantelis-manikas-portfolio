@@ -32,7 +32,7 @@ export class EmailSubscriptionComponent implements OnInit {
     this.emailsService.sub({ email: this.fields.email.value })
       .subscribe(response => {
         if(response.result === 'error') {
-          this.errorHandler(response.msg);
+          this.errorHandler(response.msg.replace(/<[^>]*>(?<content>[^<]*)<\/.>/ig, ''));
         }else{
           this.success = true;
           this.submitted = false;
@@ -42,7 +42,7 @@ export class EmailSubscriptionComponent implements OnInit {
 			});
   }
 
-  private errorHandler(error: string) {
+  private errorHandler(error: string): void {
     this.error = true;
     this.errorMessage = error;
   }
@@ -64,5 +64,5 @@ export class EmailSubscriptionComponent implements OnInit {
     this.submitted = false;
   }
 
-  public get fields() { return this.form.controls; }
+  public get fields(): any { return this.form.controls; }
 }

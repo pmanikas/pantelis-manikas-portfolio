@@ -16,13 +16,15 @@
   box-sizing: border-box;
   transition: transform .3s ease;
   &:hover{
-    transform: translateY(-1px);
     &::after {
       opacity: 0;
     }
     &::after {
       opacity: 1;
     }
+  }
+  &:active {
+    transform: scale(0.95);
   }
   &::before {
     @include fill;
