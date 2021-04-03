@@ -29,41 +29,10 @@
       </div>
     </div>
     <div class="services__grid">
-      <div class="services__item">
-        <h3 class="services__item__title">Meet the Client</h3>
+      <div *ngFor="let service of services" class="services__item">
+        <h3 class="services__item__title">{{ service.title }}</h3>
         <p class="services__item__details">
-          <strong>Ask first.</strong> Although I'm the one that's going to build
-          your app or website, you are the real rock star. That's why we should
-          focus on you and your needs. Understanding what the client requires
-          and making the client understand the process in simple words is half
-          of the work.
-        </p>
-      </div>
-      <div class="services__item">
-        <h3 class="services__item__title">Strategy</h3>
-        <p class="services__item__details">
-          <strong>Scouting.</strong> Before jumping into development I always
-          make sure that we’re asking the right questions and trying to
-          accompdivsh the right challenges. This stage includes market research,
-          competitive analysis, consulting and exploring possible solutions.
-        </p>
-      </div>
-      <div class="services__item">
-        <h3 class="services__item__title">Development</h3>
-        <p class="services__item__details">
-          <strong>Problem solving.</strong> During the transition from designs
-          into the development I make sure that I've planned to apply the best
-          possible coding patterns for a stable result. At the end of this phase
-          you’ll have a bit and pixel perfect app.
-        </p>
-      </div>
-      <div class="services__item">
-        <h3 class="services__item__title">Quality assurance</h3>
-        <p class="services__item__details">
-          <strong>Transparent process.</strong> Complete overview of my design
-          process through regular meetings. After the initial design versions
-          I’m happy to do user testing with your customers to ensure the best
-          possible solutions for their needs.
+          <strong>{{ service.subtitle }}</strong> {{ service.description }}
         </p>
       </div>
     </div>

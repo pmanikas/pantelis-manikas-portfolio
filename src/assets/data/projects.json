@@ -1,44 +1,44 @@
 [
   {
-    "title": "Vue Guitar Tuner",
+    "title": "FRISKY Radio Webapp",
+    "url": "https://frisky.fm",
+    "image": "/assets/images/frisky-new-webapp.gif",
+    "type": "Web App",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
+  },
+  {
+    "title": "Videogames Portal",
+    "url": "https://gamemedium.com",
+    "image": "/assets/images/game-medium-dot-com.gif",
+    "type": "Web App",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
+  },
+  {
+    "title": "Guitar Auto Tuner",
     "url": "https://pmanikas.github.io/vue-guitar-tuner-demo",
-    "image": "https://picsum.photos/350/315",
+    "image": "/assets/images/vue-webapp-guitar-tuner.gif",
     "type": "Web App",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
   },
   {
-    "title": "Vue Tone Generator",
+    "title": "Tone Generator App",
     "url": "https://pmanikas.github.io/vue-tone-generator-demo",
-    "image": "https://picsum.photos/350/300",
+    "image": "/assets/images/vue-tone-generator.gif",
     "type": "Web App",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
   },
   {
-    "title": "Chill Vibes",
+    "title": "Chill Vibes Library",
     "url": "https://pmanikas.github.io/react-music-player",
-    "image": "https://picsum.photos/350/350",
+    "image": "/assets/images/react-music-library.gif",
     "type": "Web App",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
   },
   {
-    "title": "Nuxt Gaming Consoles Portal",
-    "url": "https://gamemedium.com",
-    "image": "https://picsum.photos/350/360",
-    "type": "Web App",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
-  },
-  {
-    "title": "Nuxt Gaming Consoles Portal",
-    "url": "https://gamemedium.com",
-    "image": "https://picsum.photos/350/320",
-    "type": "Web App",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
-  },
-  {
-    "title": "Nuxt Gaming Consoles Portal",
-    "url": "https://gamemedium.com",
-    "image": "https://picsum.photos/350/310",
-    "type": "Web App",
+    "title": "Architect Portfolio",
+    "url": "https://pmanikas.github.io/vue-architect-portfolio-demo",
+    "image": "/assets/images/architect-portfolio.gif",
+    "type": "Website",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi et officia laudantium libero sit veritatis adipisci cumque, ut voluptate."
   }
 ]
