@@ -1,6 +1,5 @@
-<a [href]="link ? link : '#'">
-  <button class="button" [ngClass]="['button--' + theme, 'button--' + size]">
+<span>
+  <button [routerLink]="link ? [link] : []" class="button" [ngClass]="['button--' + theme, 'button--' + size]">
     <ng-content></ng-content>
   </button>
-</a>
-
+</span>

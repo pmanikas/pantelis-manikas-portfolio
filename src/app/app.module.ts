@@ -27,6 +27,7 @@ import { ImageResourceComponent } from './components/image-resource/image-resour
 import { EmailSubscriptionComponent } from './components/email-subscription/email-subscription.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ServicesComponent } from './components/services/services.component';
+import { ContactPage } from './views/contact/contact.page';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ServicesComponent } from './components/services/services.component';
     HomePage,
     AboutPage,
     ProjectsPage,
+    ContactPage,
 
     AppComponent,
     HeaderComponent,

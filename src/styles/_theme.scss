@@ -3,6 +3,10 @@
 @import './variables/layers';
 @import './variables/mixins';
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   width: 100%;
   padding: 0 $s-l;
