@@ -3,11 +3,11 @@ import { ProjectsService } from "./../../services/projects.service";
 import Project from "./../../models/project.model";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
 
   public projects: Project[] = [];
 

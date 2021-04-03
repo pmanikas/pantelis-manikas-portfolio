@@ -19,18 +19,21 @@ import { ButtonComponent } from './components/button/button.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { SocialMediaComponent } from './components/social-media/social-media.component';
 import { CreditsComponent } from './components/credits/credits.component';
-import { HomeComponent } from './views/home/home.component';
-import { AboutComponent } from './views/about/about.component';
+import { HomePage } from './views/home/home.page';
+import { AboutPage } from './views/about/about.page';
+import { ProjectsPage } from './views/projects/projects.page';
 import { DeferLoadDirective } from './directives/defer-load.directive';
 import { ImageResourceComponent } from './components/image-resource/image-resource.component';
 import { EmailSubscriptionComponent } from './components/email-subscription/email-subscription.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
     DeferLoadDirective,
 
-    HomeComponent,
-    AboutComponent,
+    HomePage,
+    AboutPage,
+    ProjectsPage,
 
     AppComponent,
     HeaderComponent,
@@ -43,6 +46,7 @@ import { EmailSubscriptionComponent } from './components/email-subscription/emai
     CreditsComponent,
     ImageResourceComponent,
     EmailSubscriptionComponent,
+    ProjectsComponent,
   ],
   imports: [
     HttpClientModule,

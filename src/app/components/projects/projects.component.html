@@ -1,0 +1,19 @@
+<div class="projects">
+  <div class="projects__grid">
+    <div *ngFor="let project of projects" class="projects__item">
+      <a [href]="project.url" target="_blank">
+        <div class="projects__item__image__container">
+          <app-image-resource
+            [src]="project.image"
+            [alt]="project.title"
+            [width]="'323'"
+            [height]="'323'"
+          ></app-image-resource>
+        </div>
+        <p class="subtitle--s">{{ project.type }}</p>
+        <h3 class="projects__item__title">{{ project.title }}</h3>
+        <!-- <p class="projects__item__description">{{ project.description }}</p> -->
+      </a>
+    </div>
+  </div>
+</div>
