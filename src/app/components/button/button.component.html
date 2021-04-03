@@ -1,3 +1,6 @@
-<button class="button" [ngClass]="['button--' + theme, 'button--' + size]">
-  <ng-content></ng-content>
-</button>
+<a [href]="link ? link : '#'">
+  <button class="button" [ngClass]="['button--' + theme, 'button--' + size]">
+    <ng-content></ng-content>
+  </button>
+</a>
+

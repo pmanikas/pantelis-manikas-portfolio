@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ButtonComponent implements OnInit {
   @Input() theme: string = 'transparent';
   @Input() size: string = 'small';
+  @Input() link: string = '';
 
   constructor() {}
 
