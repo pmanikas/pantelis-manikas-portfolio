@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 
-
 export class ButtonComponent implements OnInit {
   @Input() theme: string = 'transparent';
   @Input() size: string = 'small';

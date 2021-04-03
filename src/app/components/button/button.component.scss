@@ -1,5 +1,10 @@
 @use './../../../styles/theme' as *;
 
+:host{
+  &~:host {
+    margin-left: $s-l;
+  }
+}
 .button {
   position: relative;
   display: block;
@@ -22,6 +27,7 @@
   &::before {
     @include fill;
     content: '';
+    border-radius: 4px;
     box-shadow: inset 0 -1px 0 rgb(0 0 0 / 10%), 0 1px 2px rgb(28 35 139 / 10%), 0 2px 5px rgb(41 52 204 / 20%);
     transition: opacity .3s ease;
     opacity: 1;
@@ -29,6 +35,7 @@
   &::after {
     @include fill;
     content: '';
+    border-radius: 4px;
     box-shadow: inset 0 -1px 0 rgb(0 0 0 / 10%), 0 2px 6px rgb(0 0 0 / 5%), 0 7px 14px rgb(28 35 139 / 15%);
     transition: opacity .3s ease;
     opacity: 0;
@@ -42,20 +49,29 @@
     color: $c-white;
     background: $c-primary;
   }
-  &--secondary {
+  &--primary--inverted {
     color: $c-primary;
     background: transparent;
-    border: 1px solid $c-primary;
+  }
+  &--secondary {
+    color: $c-white;
+    background: $c-secondary;
+  }
+  &--secondary--inverted {
+    color: $c-secondary;
+    background: transparent;
   }
 
   // Button Sizes
   &--small {
-    padding: $s-xxs $s-l;
+    padding: $s-xs $s-l;
   }
   &--medium {
-    padding: $s-s $s-xl;
+    padding: $s-m $s-xl;
+    font-size: 0.7rem;
   }
   &--large {
-    padding: $s-m $s-xxl;
+    padding: $s-m $s-xl;
+    font-size: 0.85rem;
   }
 }
