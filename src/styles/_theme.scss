@@ -5,13 +5,21 @@
 
 .container {
   width: 100%;
-  padding: 0 $s-xs;
+  padding: 0 $s-l;
   margin: 0 auto;
 }
 
-.section {
-  margin-top: $s-m;
-  margin-bottom: $s-m;
+section {
+  padding-top: $s-xxxl * 1.5;
+  padding-bottom: $s-xxxl * 1.5;
+}
+
+hr {
+  max-width: 95%;
+  height: 1px;
+  margin: 0 auto;
+  background: transparentize($c-black, 0.95);
+  border: none;
 }
 
 .accent {
@@ -21,20 +29,20 @@
 @include tablet {
   .container {
     width: $s-tablet;
-    padding: 0 $s-s;
+    padding: 0 $s-xl;
   }
 }
 
 @include desktop {
   .container {
     width: $s-desktop;
-    padding: 0 $s-m;
+    padding: 0 $s-xxl;
   }
 }
 
 @include widescreen {
   .container {
     width: $s-widescreen;
-    padding: 0 $s-l;
+    padding: 0 $s-xxxl;
   }
 }
