@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ProjectsService } from './services/projects.service';
+import { EmailsService } from './services/emails.service';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -45,6 +46,7 @@ import { EmailSubscriptionComponent } from './components/email-subscription/emai
   ],
   imports: [
     HttpClientModule,
+    HttpClientJsonpModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -57,6 +59,7 @@ import { EmailSubscriptionComponent } from './components/email-subscription/emai
   ],
   providers: [
     ProjectsService,
+    EmailsService
   ],
   bootstrap: [AppComponent],
 })

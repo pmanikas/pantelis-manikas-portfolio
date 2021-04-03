@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmailsService } from './../../services/emails.service';
 
 @Component({
   selector: 'app-email-subscription',
@@ -18,20 +19,36 @@ export class EmailSubscriptionComponent implements OnInit {
 
   public error: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  public errorMessage: string = '';
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private emailsService: EmailsService,
+  ) { }
 
   ngOnInit(): void {}
 
   private submitEmail(): void {
-    this.form.reset();
-    this.submitted = false;
-    this.success = true;
-    this.error = false;
+    this.emailsService.sub({ email: this.fields.email.value })
+      .subscribe(response => {
+        if(response.result === 'error') {
+          this.errorHandler(response.msg);
+        }else{
+          this.success = true;
+          this.submitted = false;
+        }
+      }, error => {
+        this.errorHandler(error);
+			});
+  }
+
+  private errorHandler(error: string) {
+    this.error = true;
+    this.errorMessage = error;
   }
 
   public submitHandler(): void {
     this.submitted = true;
-    this.error = true;
     if (this.form.invalid) return;
 
     this.submitEmail();

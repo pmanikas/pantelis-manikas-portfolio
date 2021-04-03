@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  public imageUrl: string = "./../../../assets/pantelis-manikas-anime.jpg";
+  public imageUrl: string = '/assets/pantelis-manikas-anime.jpg';
 
   constructor() { }
 

@@ -78,7 +78,11 @@
     flex-direction: column;
     align-items: center;
     p {
-      color: $c-secondary;
+      color: $c-radical-red;
     }
+  }
+  &__invalid {
+    font-size: 0.6rem;
+    color: $c-radical-red;
   }
 }

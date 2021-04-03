@@ -6,7 +6,9 @@ import Project from './../models/project.model';
 
 const PROJECTS_URL: string = "./assets/data/projects.json";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 
 export class ProjectsService {
   constructor(private httpClient: HttpClient) {}
