@@ -1,0 +1,20 @@
+<div class="email__sub">
+  <form *ngIf="!success && !error" class="email__sub__form" [formGroup]="form" (ngSubmit)="submitHandler()">
+    <div class="email__sub__input__container">
+      <label for="email-sub" class="email__sub__label">Email</label>
+      <input (input)="changeInputHandler()" type="email" formControlName="email" placeholder="your@email.com" id="email-sub" class="email__sub__input" type="text">
+      <div *ngIf="submitted && fields.email.errors" class="invalid-feedback">
+          <div *ngIf="fields.email.errors.required">Email is required</div>
+          <div *ngIf="fields.email.errors.email">Email must be a valid email address</div>
+      </div>
+    </div>
+    <button class="email__sub__button" type="submit">Subscribe</button>
+  </form>
+  <div *ngIf="success" class="email__sub__success">
+    <p>Thank you for subscribing!</p>
+  </div>
+  <div *ngIf="error" class="email__sub__error">
+    <p>An error occured, please try again!</p>
+    <app-button (click)="reset()" [theme]="'secondary'" [size]="'medium'">Try Again!</app-button>
+  </div>
+</div>

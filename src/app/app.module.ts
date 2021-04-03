@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { ProjectsService } from './services/projects.service';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -18,6 +22,7 @@ import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
 import { DeferLoadDirective } from './directives/defer-load.directive';
 import { ImageResourceComponent } from './components/image-resource/image-resource.component';
+import { EmailSubscriptionComponent } from './components/email-subscription/email-subscription.component';
 
 @NgModule({
   declarations: [
@@ -36,17 +41,23 @@ import { ImageResourceComponent } from './components/image-resource/image-resour
     SocialMediaComponent,
     CreditsComponent,
     ImageResourceComponent,
+    EmailSubscriptionComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     HeroComponent,
   ],
-  providers: [],
+  providers: [
+    ProjectsService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

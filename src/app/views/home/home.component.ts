@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from "./../../services/projects.service";
+import Project from "./../../models/project.model";
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public projects: Project[] = [];
 
-  ngOnInit(): void {}
+  constructor(private projectsService: ProjectsService) { }
+
+  ngOnInit(): void {
+    this.getAllProjects();
+  }
+
+  private getAllProjects(): void {
+    this.projectsService.getAll()
+      .subscribe((projects: Project[]) => {
+        this.projects = projects;
+      })
+  }
 }

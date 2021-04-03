@@ -1,0 +1,73 @@
+@use './../../../styles/theme' as *;
+
+.services {
+  &__grid {
+    display: grid;
+    grid-gap: $s-xxxl;
+  }
+  &__item__details {
+    font-weight: 100;
+    margin-bottom: 0;
+  }
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $s-xxxl;
+  }
+  &__intro__details {
+    flex-basis: 60%;
+    h2 {
+      margin-bottom: $s-m;
+    }
+    p {
+      font-weight: 100;
+    }
+  }
+  &__buttons {
+    display: flex;
+  }
+}
+
+.services__button~.services__button {
+  margin-left: $s-xl;
+}
+
+.projects {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(323px, 1fr));
+    grid-gap: $s-xxl;
+  }
+  &__item__description {
+    font-size: 0.8rem;
+    color: transparentize($c-black, 0.4);
+    margin-bottom: 0;
+  }
+  &__item__image__container {
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0;
+    margin-bottom: $s-m;
+  }
+}
+
+.subscribtion {
+  text-align: center;
+}
+
+@include tablet {
+  .services {
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    &__intro {
+      flex-direction: row;
+      align-items: center;
+    }
+    &__buttons {
+      display: flex;
+      flex-basis: 40%;
+      justify-content: flex-end;
+    }
+  }
+}
