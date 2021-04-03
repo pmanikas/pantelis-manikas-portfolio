@@ -1,0 +1,8 @@
+<div class="services__grid">
+  <div *ngFor="let service of services" class="services__item">
+    <h3 class="services__item__title">{{ service.title }}</h3>
+    <p class="services__item__details">
+      <strong>{{ service.subtitle }}</strong> {{ service.description }}
+    </p>
+  </div>
+</div>

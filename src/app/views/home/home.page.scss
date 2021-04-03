@@ -1,14 +1,6 @@
 @use './../../../styles/theme' as *;
 
 .services {
-  &__grid {
-    display: grid;
-    grid-gap: $s-xxxl;
-  }
-  &__item__details {
-    font-weight: 100;
-    margin-bottom: 0;
-  }
   &__intro {
     display: flex;
     flex-direction: column;
@@ -38,9 +30,6 @@
 
 @include tablet {
   .services {
-    &__grid {
-      grid-template-columns: 1fr 1fr;
-    }
     &__intro {
       flex-direction: row;
       align-items: center;

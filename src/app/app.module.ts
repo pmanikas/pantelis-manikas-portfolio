@@ -26,6 +26,7 @@ import { DeferLoadDirective } from './directives/defer-load.directive';
 import { ImageResourceComponent } from './components/image-resource/image-resource.component';
 import { EmailSubscriptionComponent } from './components/email-subscription/email-subscription.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ServicesComponent } from './components/services/services.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     ImageResourceComponent,
     EmailSubscriptionComponent,
     ProjectsComponent,
+    ServicesComponent,
   ],
   imports: [
     HttpClientModule,
