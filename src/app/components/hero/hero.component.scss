@@ -22,18 +22,26 @@ $image-size: 300px;
     justify-content: center;
     flex-basis: 50%;
   }
-}
-
-.image__container {
-  width: $image-size;
-  height: $image-size;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.image {
-  width: $image-size;
-  height: $image-size;
-  object-fit: cover;
+  &__image__container {
+    position: relative;
+    &::before {
+      @include fill;
+      top: -$s-xl;
+      left: -$s-xl;
+      content: '';
+      z-index: $z-minus;
+      background: linear-gradient($c-primary, $c-secondary);
+      border-radius: 6px;
+      opacity: 0.5;
+    }
+  }
+  &__image{
+    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+    filter: grayscale(1);
+    opacity: 0.9;
+  }
 }
 
 
