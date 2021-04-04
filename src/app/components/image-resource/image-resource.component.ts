@@ -15,7 +15,6 @@ export class ImageResourceComponent implements OnInit {
   @Input() lazy: boolean = true;
 
   public showImage: boolean = false;
-  public placeholder: string = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQIW2MMDQ39z8DAwMAIYwAAKgMD/9AXrvgAAAAASUVORK5CYII=';
 
   constructor() { }
 

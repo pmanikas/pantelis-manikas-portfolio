@@ -1,3 +1,15 @@
-.image {
+@use './../../../styles/theme' as *;
+
+.image__wrap {
+  background: transparentize($c-black, 0.5);
+}
+
+.image__resource {
+  display: block;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  &--active {
+    opacity: 1;
+  }
 }
