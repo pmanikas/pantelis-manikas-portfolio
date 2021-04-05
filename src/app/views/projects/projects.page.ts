@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from './../../services/projects.service';
 import Project from './../../models/project.model';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-projects-page',
@@ -11,6 +12,7 @@ import Project from './../../models/project.model';
 export class ProjectsPage implements OnInit {
 
   public projects: Project[] = [];
+  public faGithub = faGithub;
 
   constructor(private projectsService: ProjectsService) {}
 

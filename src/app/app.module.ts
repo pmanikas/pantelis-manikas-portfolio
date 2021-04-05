@@ -11,6 +11,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectsService } from './services/projects.service';
 import { EmailsService } from './services/emails.service';
 
+import { HomePage } from './views/home/home.page';
+import { AboutPage } from './views/about/about.page';
+import { ProjectsPage } from './views/projects/projects.page';
+import { BlogPage } from './views/blog/blog.page';
+import { ContactPage } from './views/contact/contact.page';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -19,16 +24,13 @@ import { ButtonComponent } from './components/button/button.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { SocialMediaComponent } from './components/social-media/social-media.component';
 import { CreditsComponent } from './components/credits/credits.component';
-import { HomePage } from './views/home/home.page';
-import { AboutPage } from './views/about/about.page';
-import { ProjectsPage } from './views/projects/projects.page';
 import { DeferLoadDirective } from './directives/defer-load.directive';
 import { ImageResourceComponent } from './components/image-resource/image-resource.component';
 import { EmailSubscriptionComponent } from './components/email-subscription/email-subscription.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ServicesComponent } from './components/services/services.component';
-import { ContactPage } from './views/contact/contact.page';
 import { CardComponent } from './components/card/card.component';
+import { ArticlesComponent } from './components/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { CardComponent } from './components/card/card.component';
     HomePage,
     AboutPage,
     ProjectsPage,
+    BlogPage,
     ContactPage,
 
     AppComponent,
@@ -53,6 +56,8 @@ import { CardComponent } from './components/card/card.component';
     ProjectsComponent,
     ServicesComponent,
     CardComponent,
+    BlogPage,
+    ArticlesComponent,
   ],
   imports: [
     HttpClientModule,
@@ -63,9 +68,6 @@ import { CardComponent } from './components/card/card.component';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule
-  ],
-  exports: [
-    HeroComponent,
   ],
   providers: [
     ProjectsService,

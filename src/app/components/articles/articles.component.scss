@@ -1,0 +1,33 @@
+@use './../../../styles/theme' as *;
+
+.articles {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: $s-xxl;
+  }
+  &__item__excerpt {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    color: transparentize($c-black, 0.4);
+  }
+  &__item__image__container {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: $s-m;
+    overflow: hidden;
+    font-size: 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 15%), 0 10px 20px rgb(0 0 0 / 15%);
+  }
+  &__item__image {
+    transition: transform .3s ease-in-out;
+  }
+  &__item:hover {
+    .articles__item__image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+

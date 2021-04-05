@@ -7,6 +7,9 @@ $image-size: 300px;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: space-between;
+  &__header {
+    font-size: 4rem;
+  }
   &__details {
     max-width: 520px;
     flex-basis: 50%;

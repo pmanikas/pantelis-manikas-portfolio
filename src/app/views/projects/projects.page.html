@@ -1,7 +1,19 @@
-<section class="projects">
+<section class="projects__page">
   <div class="container">
-    <h1>Proejcts</h1>
+    <div class="text--center">
+      <div class="subtitle--m">
+        Development Resources
+      </div>
+      <h1>Proejcts</h1>
+      <p>Partial collection of my projects. Every bit is created by me for you.</p>
+    </div>
     <div class="subtitle--m">Recent Projects</div>
     <app-projects [projects]="projects"></app-projects>
+    <a href="https://github.com/pmanikas" target="_blank" class="text--center projects__button">
+      <app-button [theme]="'secondary'" [size]="'large'">
+        My Github &nbsp;
+        <fa-icon [icon]="faGithub" class="social__icon"></fa-icon>
+      </app-button>
+    </a>
   </div>
 </section>

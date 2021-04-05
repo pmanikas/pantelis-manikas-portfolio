@@ -1,6 +1,9 @@
 @use './../../../styles/theme' as *;
 
-.projects{
+.blog{
+  &__intro {
+    padding-bottom: $s-xxxl;
+  }
   &__button {
     display: block;
     margin-top: $s-xxl;
