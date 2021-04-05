@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ProjectsService } from "./../../services/projects.service";
+import { Component, Input, OnInit } from '@angular/core';
 import Project from "./../../models/project.model";
 
 @Component({
@@ -9,18 +8,10 @@ import Project from "./../../models/project.model";
 })
 export class ProjectsComponent implements OnInit {
 
-  public projects: Project[] = [];
+  @Input() projects: Project[] = [];
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.getAllProjects();
-  }
+  ngOnInit(): void {}
 
-  private getAllProjects(): void {
-    this.projectsService.getAll()
-      .subscribe((projects: Project[]) => {
-        this.projects = projects;
-      })
-  }
 }
