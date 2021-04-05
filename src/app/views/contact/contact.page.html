@@ -1,7 +1,53 @@
-<section class="about">
+<section class="contact">
   <div class="container">
-    <div class="subtitle--m">What’s in your mind?</div>
-    <h1>Let’s talk about your web app</h1>
-    <p>If you have a project in mind or you just want to chat, feel free to get in touch. Currently my time books quickly, so the sooner you write, the better it is for both of us.</p>
+    <div class="text-content">
+      <div class="subtitle--m text-center">What’s in your mind?</div>
+      <h1 class="contact__title text-center">Let’s talk about your Vision</h1>
+      <p class="contact__intro text-center">
+        If you have a project in mind or a business idea that you are not quite
+        sure how to bring to life, feel free to get in touch.
+      </p>
+      <br />
+      <div class="subtitle--m text-center">How I work?</div>
+      <h2 class="contact__subtitle text-center">Profitable Products</h2>
+      <p class="contact__details">
+        As a developer with a business background, I'm mostly focused on
+        creating profitable solutions for potentially profitable ideas. That's
+        why I think that making the right questions is the key to a successful
+        collaboration.
+      </p>
+      <p class="contact__details">
+        I only focus on certain amount of clients at the same time to ensure
+        that the quality of my work is not compromised. If it feels like I'm not
+        the right person for your idea, I'll make sure to keep you informed and
+        point you to the right direction.
+      </p>
+    </div>
+    <div class="contact__cards">
+      <app-card
+        [theme]="'primary'"
+        [title]="'App Development'"
+        [link]="'https://form.typeform.com/to/ilyOOjYU'"
+        [bottomText]="'Start a project now >'"
+        [details]="'Begin your journey here if you have an awesome idea. This is ideal for long term projects such as website or webapp development.'"
+      >
+      </app-card>
+      <app-card
+        [theme]="'primary--inverted'"
+        [title]="'Software Consulting'"
+        [link]="'https://form.typeform.com/to/mmeru3BU'"
+        [bottomText]="'Schedule now >'"
+        [details]="'If you need an overview of your project, need a feedback or a code review, start here to find a good 15-min spot for a quick call.'"
+      >
+      </app-card>
+    </div>
+    <div class="contact__subscription text-center">
+      <div class="subtitle--m">Stay Updated</div>
+      <h2>The best time is now but...</h2>
+      <p>
+        Are you having awesome ideas but need some more time to solidify them? Subscribe and until you're ready to share your dreams, enjoy my monthly updates!
+      </p>
+      <app-email-subscription></app-email-subscription>
+    </div>
   </div>
 </section>

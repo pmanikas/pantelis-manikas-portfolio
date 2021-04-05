@@ -13,6 +13,16 @@ html {
   margin: 0 auto;
 }
 
+.text-content {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
 section {
   padding-top: $s-xxxl * 1.5;
   padding-bottom: $s-xxxl * 1.5;

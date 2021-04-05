@@ -1,1 +1,33 @@
 @use './../../../styles/theme' as *;
+
+.contact {
+  &__title {
+    font-size: 3rem;
+  }
+  &__subtitle {
+    font-size: 2rem;
+  }
+  &__details {
+    font-weight: 100;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: $s-xl;
+  }
+  &__subscription {
+    margin-top: $s-xl;
+  }
+}
+
+
+@include tablet {
+  .contact {
+    &__cards {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+}

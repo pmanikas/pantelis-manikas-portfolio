@@ -106,7 +106,6 @@ p,
 a {
 	font-size: 1rem;
 	font-weight: 400;
-	color: $c-black;
 	margin-bottom: 1.25rem;
 }
 
@@ -128,6 +127,7 @@ p a:hover {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 hr {

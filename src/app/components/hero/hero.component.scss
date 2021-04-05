@@ -4,11 +4,9 @@ $image-size: 300px;
 
 .hero {
   display: flex;
-  min-height: calc(100vh - #{$s-header-height});
   flex-direction: column-reverse;
   align-items: center;
   justify-content: space-between;
-  padding: $s-xl 0;
   &__details {
     max-width: 520px;
     flex-basis: 50%;

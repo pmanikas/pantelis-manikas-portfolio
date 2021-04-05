@@ -28,6 +28,7 @@ import { EmailSubscriptionComponent } from './components/email-subscription/emai
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ContactPage } from './views/contact/contact.page';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ContactPage } from './views/contact/contact.page';
     EmailSubscriptionComponent,
     ProjectsComponent,
     ServicesComponent,
+    CardComponent,
   ],
   imports: [
     HttpClientModule,
