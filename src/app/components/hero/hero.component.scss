@@ -25,6 +25,7 @@ $image-size: 300px;
   }
   &__image__container {
     position: relative;
+    margin-bottom: $s-xxl;
     &::before, &::after {
       @include fill;
       content: '';
@@ -57,5 +58,9 @@ $image-size: 300px;
 @include desktop {
   .hero {
     flex-direction: row;
+    &__image__container {
+      position: relative;
+      margin-bottom: 0;
+    }
   }
 }

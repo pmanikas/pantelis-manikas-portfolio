@@ -24,8 +24,8 @@ html {
 }
 
 section {
-  padding-top: $s-xxxl * 1.5;
-  padding-bottom: $s-xxxl * 1.5;
+  padding-top: $s-xl * 1.5;
+  padding-bottom: $s-xl * 1.5;
 }
 
 hr {
@@ -52,11 +52,14 @@ hr {
     width: $s-desktop;
     padding: 0 $s-xxl;
   }
+  .container {
+    padding: 0 $s-l;
+  }
 }
 
 @include widescreen {
-  .container {
-    width: $s-widescreen;
-    padding: 0 $s-xxxl;
+  section {
+    padding-top: $s-xxxl * 1.5;
+    padding-bottom: $s-xxxl * 1.5;
   }
 }
