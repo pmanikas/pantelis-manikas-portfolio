@@ -16,16 +16,13 @@
         </p>
       </div>
       <div class="services__buttons">
-        <app-button
-          class="services__button"
-          [size]="'medium'"
-          [theme]="'primary'"
+        <app-button class="services__button" size="medium" theme="primary"
           >Start a project</app-button
         >
         <app-button
           class="services__button"
-          [size]="'medium'"
-          [theme]="'primary--inverted'"
+          size="medium"
+          theme="primary--inverted"
           >Learn more</app-button
         >
       </div>
@@ -35,10 +32,30 @@
 </section>
 <hr />
 <section class="projects">
-  <div id="projects" class="container">
+  <div class="container">
     <div class="subtitle--m">Recent Cases</div>
     <h2>Projects</h2>
     <app-projects [projects]="projects"></app-projects>
+    <div class="text--center">
+      <br />
+      <app-button size="large" theme="primary" link="/projects"
+        >Discover more</app-button
+      >
+    </div>
+  </div>
+</section>
+<hr />
+<section clall="home__blog">
+  <div class="container">
+    <div class="subtitle--m">Retroing is life</div>
+    <h2>My Nerdy Blog</h2>
+    <app-articles [articles]="articles"></app-articles>
+    <div class="text--center">
+      <br />
+      <app-button link="/blog" theme="secondary" size="large"
+        >Geek More</app-button
+      >
+    </div>
   </div>
 </section>
 <hr />

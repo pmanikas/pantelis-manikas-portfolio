@@ -15,6 +15,6 @@
   </div>
   <div *ngIf="error" class="email__sub__error">
     <p>{{ errorMessage || 'An error occured, please try again!' }}</p>
-    <app-button (click)="reset()" [theme]="'secondary'" [size]="'medium'">Try Again!</app-button>
+    <app-button (click)="reset()" theme="secondary" size="medium">Try Again!</app-button>
   </div>
 </div>

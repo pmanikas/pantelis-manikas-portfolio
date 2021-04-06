@@ -12,14 +12,14 @@ export class BlogPage implements OnInit {
 
   public articles: Article[] = [];
 
-  constructor(private articleService: ArticlesService) {}
+  constructor(private articlesService: ArticlesService) {}
 
   ngOnInit(): void {
-    this.getAllProjects();
+    this.getAllArticles();
   }
 
-  private getAllProjects(): void {
-    this.articleService.getAll().subscribe((articles: Article[]) => {
+  private getAllArticles(): void {
+    this.articlesService.getAll().subscribe((articles: Article[]) => {
       this.articles = articles;
     });
   }

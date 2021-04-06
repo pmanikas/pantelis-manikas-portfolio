@@ -16,6 +16,8 @@ export class ProjectsService {
   public getAll(): Observable<Project[]> {
     return this.httpClient
       .get(PROJECTS_URL)
-      .pipe(map(res => res as Project[]));
+      .pipe(
+        map(res => res as Project[]),
+      );
   }
 }

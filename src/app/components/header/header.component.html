@@ -2,6 +2,8 @@
   <div class="container header__inner">
     <app-logo></app-logo>
     <app-nav></app-nav>
-    <app-button [link]="'/contact'" class="header__contact__button" [theme]="'primary'">Contact</app-button>
+    <a class="header__contact__button" [routerLink]="['/contact']">
+      <app-button theme="primary">Contact</app-button>
+    </a>
   </div>
 </header>

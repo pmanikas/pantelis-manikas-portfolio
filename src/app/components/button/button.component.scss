@@ -46,6 +46,10 @@
   &--transparent {
     color: $c-primary;
   }
+  &--black {
+    color: $c-white;
+    background: $c-black;
+  }
   &--primary {
     color: $c-white;
     background: $c-primary;
