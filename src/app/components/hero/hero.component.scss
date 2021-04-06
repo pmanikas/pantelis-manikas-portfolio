@@ -25,15 +25,24 @@ $image-size: 300px;
   }
   &__image__container {
     position: relative;
-    &::before {
+    &::before, &::after {
       @include fill;
-      top: -$s-xl;
-      left: -$s-xl;
       content: '';
       z-index: $z-minus;
-      background: linear-gradient($c-primary, $c-secondary);
-      border-radius: 6px;
-      opacity: 0.5;
+      border-radius: 4px;
+      opacity: 0.8;
+    }
+    &::before {
+      top: -$s-l;
+      left: -$s-l;
+      background: $c-secondary;
+      box-shadow: -1px -1px 8px $c-secondary;
+    }
+    &::after {
+      top: $s-l;
+      left: $s-l;
+      background: $c-primary;
+      box-shadow: 1px 1px 8px $c-primary;
     }
   }
   &__image{
@@ -44,7 +53,6 @@ $image-size: 300px;
     opacity: 0.9;
   }
 }
-
 
 @include desktop {
   .hero {
