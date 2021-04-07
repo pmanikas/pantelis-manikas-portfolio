@@ -27,7 +27,7 @@ export class HomePage implements OnInit {
 
   private getAllProjects(): void {
     this.projectsService.getAll().subscribe((projects: Project[]) => {
-      this.projects = projects.slice(0, 3);
+      this.projects = projects.slice(0, 4);
     });
   }
 
