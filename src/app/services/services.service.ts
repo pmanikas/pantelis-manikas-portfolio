@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import Service from './../models/service.model';
 
-const SERVICES_URL: string = "./assets/data/services.json";
+const SERVICES_URL: string = `${environment.API_ROOT}services/`;
 
 @Injectable({
   providedIn: 'root'
