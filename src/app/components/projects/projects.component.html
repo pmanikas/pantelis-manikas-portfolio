@@ -1,7 +1,7 @@
 <div class="projects">
   <div class="projects__grid">
     <div *ngFor="let project of projects" class="projects__item">
-      <a [href]="project.url" target="_blank">
+      <a rel="noopener" [href]="project.url" target="_blank">
         <div class="projects__item__image__container">
           <app-image-resource
             [src]="project.image"
