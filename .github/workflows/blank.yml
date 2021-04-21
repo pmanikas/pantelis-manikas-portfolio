@@ -41,7 +41,7 @@ jobs:
     - name: NPM build Angular Production
       run: ng build --prod
     - name: Delete Existing Files
-      run: sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'rm -rf public_html/pantelismanikas/pantelismanikas.com/dist/*'
+      run: sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'rm -rf public_html/pantelismanikas/pantelismanikas.com/*'
 
     - name: Compress and Copy New Files to server
       run : |
@@ -49,6 +49,6 @@ jobs:
             tar -czvf ../../app.tar.gz ./
             cd ..
             cd ..
-            sudo sshpass -p "${{ secrets.SSH_PASS }}" scp -v -o StrictHostKeyChecking=no -r app.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/pantelismanikas/pantelismanikas.com/dist
+            sudo sshpass -p "${{ secrets.SSH_PASS }}" scp -v -o StrictHostKeyChecking=no -r app.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/pantelismanikas/pantelismanikas.com
     - name: Uncompress new Files
-      run : sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'cd public_html/pantelismanikas/pantelismanikas.com/dist && tar -xzvf app.tar.gz && rm app.tar.gz'
+      run : sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'cd public_html/pantelismanikas/pantelismanikas.com && tar -xzvf app.tar.gz && rm app.tar.gz'
