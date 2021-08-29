@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailsService } from './../../services/emails.service';
 
@@ -7,7 +7,7 @@ import { EmailsService } from './../../services/emails.service';
   templateUrl: './email-subscription.component.html',
   styleUrls: ['./email-subscription.component.scss']
 })
-export class EmailSubscriptionComponent implements OnInit {
+export class EmailSubscriptionComponent {
 
   public form: FormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -25,8 +25,6 @@ export class EmailSubscriptionComponent implements OnInit {
     private formBuilder: FormBuilder,
     private emailsService: EmailsService,
   ) { }
-
-  ngOnInit(): void {}
 
   private submitEmail(): void {
     this.emailsService.sub({ email: this.fields.email.value })

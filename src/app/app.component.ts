@@ -6,7 +6,7 @@ import { Router, NavigationEnd } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {

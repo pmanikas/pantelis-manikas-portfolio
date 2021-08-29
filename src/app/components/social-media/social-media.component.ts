@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faLinkedin, faGithub, faNpm, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -7,7 +7,7 @@ import { faLinkedin, faGithub, faNpm, faInstagram, faFacebook } from '@fortaweso
   styleUrls: ['./social-media.component.scss']
 })
 
-export class SocialMediaComponent implements OnInit {
+export class SocialMediaComponent {
 
   public faLinkedin = faLinkedin;
   public faGithub = faGithub;
@@ -16,7 +16,5 @@ export class SocialMediaComponent implements OnInit {
   public faFacebook = faFacebook;
 
   constructor() { }
-
-  ngOnInit(): void { }
 
 }

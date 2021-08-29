@@ -1,13 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-image-resource',
   templateUrl: './image-resource.component.html',
   styleUrls: ['./image-resource.component.scss']
 })
 
+export class ImageResourceComponent {
 
-export class ImageResourceComponent implements OnInit {
   @Input() src: string = '';
   @Input() alt: string = '';
   @Input() width: string = '';
@@ -18,9 +17,8 @@ export class ImageResourceComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {}
-
   public displayImage(): void {
     this.showImage = true;
   }
+
 }

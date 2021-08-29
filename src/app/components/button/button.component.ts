@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -6,12 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   @Input() theme: string = 'transparent';
   @Input() size: string = 'small';
   @Input() link: string = '';
 
   constructor() {}
 
-  ngOnInit(): void {}
 }

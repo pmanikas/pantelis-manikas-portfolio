@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,15 +6,13 @@ import { Router } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
 
   isNavOpen: boolean = false;
 
   constructor(private router: Router) {
     router.events.subscribe(() => this.closeNav())
   }
-
-  ngOnInit(): void {}
 
   public toggleNav(): void {
     this.isNavOpen = !this.isNavOpen;
@@ -23,4 +21,5 @@ export class NavComponent implements OnInit {
   public closeNav(): void {
     this.isNavOpen = false;
   }
+
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_ROOT: 'https://api.pantelismanikas.com/'
+  API_ROOT: 'http://localhost:3100/'
 };
 
 /*
