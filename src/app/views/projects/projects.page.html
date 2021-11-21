@@ -7,8 +7,11 @@
       <h1>Proejcts</h1>
       <p>Partial collection of my projects. Every bit is created by me for you.</p>
     </div>
-    <div class="subtitle--m">Recent Projects</div>
-    <app-projects [projects]="projects"></app-projects>
+    <div *ngIf="!isLoading && projects.length">
+      <div class="subtitle--m">Recent Projects</div>
+      <app-projects [projects]="projects"></app-projects>
+    </div>
+    <app-loader *ngIf="isLoading"></app-loader>
     <a href="https://github.com/pmanikas" target="_blank" class="text--center projects__button">
       <app-button theme="black" size="large">
         My Github &nbsp;

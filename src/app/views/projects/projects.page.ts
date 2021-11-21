@@ -10,9 +10,9 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 })
 
 export class ProjectsPage implements OnInit {
-
   public projects: Project[] = [];
-  public faGithub = faGithub;
+  public faGithub: any = faGithub;
+  public isLoading: boolean = true;
 
   constructor(private projectsService: ProjectsService) {}
 
@@ -21,9 +21,15 @@ export class ProjectsPage implements OnInit {
   }
 
   private getAllProjects(): void {
-    this.projectsService.getAll().subscribe((projects: Project[]) => {
-      this.projects = projects;
-    });
+    this.projectsService.getAll()
+      .subscribe(
+        (projects: Project[]) => {
+          this.projects = projects;
+          this.isLoading = false;
+        },
+        (_error) => {
+          this.isLoading = false;
+        }
+      );
   }
-
 }

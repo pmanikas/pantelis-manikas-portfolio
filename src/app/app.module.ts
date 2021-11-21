@@ -31,6 +31,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ServicesComponent } from './components/services/services.component';
 import { CardComponent } from './components/card/card.component';
 import { ArticlesComponent } from './components/articles/articles.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
     CardComponent,
     BlogPage,
     ArticlesComponent,
+    LoaderComponent
   ],
   imports: [
     HttpClientModule,

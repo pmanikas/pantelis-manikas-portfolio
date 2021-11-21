@@ -9,8 +9,8 @@ import { Article } from 'src/app/models/article.model';
 })
 
 export class BlogPage implements OnInit {
-
   public articles: Article[] = [];
+  public isLoading: boolean = true;
 
   constructor(private articlesService: ArticlesService) {}
 
@@ -19,9 +19,15 @@ export class BlogPage implements OnInit {
   }
 
   private getAllArticles(): void {
-    this.articlesService.getAll().subscribe((articles: Article[]) => {
-      this.articles = articles;
-    });
+    this.articlesService.getAll()
+      .subscribe(
+        (articles: Article[]) => {
+          this.isLoading = false;
+          this.articles = articles;
+        },
+        (_error) => {
+          this.isLoading = false;
+        }
+      );
   }
-
 }

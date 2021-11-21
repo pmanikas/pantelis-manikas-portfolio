@@ -1,0 +1,20 @@
+.spin {
+  display: inline-block;
+  line-height: 0;
+  transform-origin: center center;
+  animation-duration: 1s;
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

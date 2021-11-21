@@ -10,7 +10,8 @@
       <app-email-subscription></app-email-subscription>
     </div>
     <div class="subtitle--m">Recent</div>
-    <app-articles [articles]="articles"></app-articles>
+    <app-articles *ngIf="!isLoading" [articles]="articles"></app-articles>
+    <app-loader *ngIf="isLoading"></app-loader>
     <a href="https://gamemedium.com/authors/pmanikas" target="_blank" class="text--center blog__button">
       <app-button theme="secondary" size="large">Discover more</app-button>
     </a>

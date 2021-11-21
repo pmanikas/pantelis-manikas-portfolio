@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailsService } from './../../services/emails.service';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-email-subscription',
@@ -14,12 +15,11 @@ export class EmailSubscriptionComponent {
   });
 
   public submitted: boolean = false;
-
   public success: boolean = false;
-
   public error: boolean = false;
-
   public errorMessage: string = '';
+  public isSending: boolean = false;
+  public faSpinner: any = faSpinner;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,8 +27,10 @@ export class EmailSubscriptionComponent {
   ) { }
 
   private submitEmail(): void {
+    this.isSending = true;
     this.emailsService.sub({ email: this.fields.email.value })
       .subscribe(response => {
+        this.isSending = false;
         if(response.result === 'error') {
           this.errorHandler(response.msg.replace(/<[^>]*>(?<content>[^<]*)<\/.>/ig, ''));
         }else{
@@ -37,6 +39,7 @@ export class EmailSubscriptionComponent {
         }
       }, error => {
         this.errorHandler(error);
+        this.isSending = false;
 			});
   }
 

@@ -8,7 +8,7 @@
           <div *ngIf="fields.email.errors.email">Email must be a valid email address</div>
       </div>
     </div>
-    <button class="email__sub__button" type="submit">Subscribe</button>
+    <button class="email__sub__button" [disabled]="isSending" type="submit">{{ isSending ? 'Sending' : 'Subscribe'}} <fa-icon *ngIf="isSending" [icon]="faSpinner" class="spin"></fa-icon></button>
   </form>
   <div *ngIf="success" class="email__sub__success">
     <p>Thank you for subscribing!</p>
