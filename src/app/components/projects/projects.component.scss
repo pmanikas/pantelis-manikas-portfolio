@@ -3,7 +3,7 @@
 .projects {
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(323px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: $s-xxl;
   }
   &__item__description {

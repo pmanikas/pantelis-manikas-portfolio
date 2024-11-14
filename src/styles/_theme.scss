@@ -50,14 +50,15 @@ hr {
 @include desktop {
   .container {
     width: $s-desktop;
-    padding: 0 $s-xxl;
-  }
-  .container {
     padding: 0 $s-l;
   }
 }
 
 @include widescreen {
+  .container {
+    width: $s-widescreen;
+    padding: 0 $s-xl;
+  }
   section {
     padding-top: $s-xxxl * 1.5;
     padding-bottom: $s-xxxl * 1.5;
