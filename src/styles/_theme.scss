@@ -40,6 +40,10 @@ hr {
   color: $c-primary;
 }
 
+.secondary {
+  color: $c-secondary;
+}
+
 @include tablet {
   .container {
     width: $s-tablet;

@@ -1,1 +1,15 @@
 @use './../../../styles/theme' as *;
+
+
+.about-image-container {
+  border: 1px solid $c-primary;
+}
+
+.about-image {
+  cursor: pointer;
+  filter: blur(0.5rem);
+
+  &.is-visible {
+    filter: blur(0);
+  }
+}
