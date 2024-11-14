@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { Article } from './../models/article.model';
 
-const ARTICLES_API_URL: string = `${environment.API_ROOT}articles/`;
+const ARTICLES_API_URL: string = `${environment.BLOG_API_BASE_URL}/posts/?&author=pmanikas`;
 
 @Injectable({
   providedIn: 'root'

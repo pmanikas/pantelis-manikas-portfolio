@@ -21,6 +21,8 @@ export class HomePage implements OnInit {
   public areArticlesLoading: boolean = true;
   public areProjectsLoading: boolean = true;
 
+  private maxArticles: number = 6;
+
   constructor(
     private servicesService: ServicesService,
     private projectsService: ProjectsService,
@@ -63,7 +65,7 @@ export class HomePage implements OnInit {
     this.articlesService.getAll()
       .subscribe(
         (articles: Article[]) => {
-          this.articles = articles;
+          this.articles = articles.slice(0, this.maxArticles);
           this.areArticlesLoading = false;
         },
         (_error) => {

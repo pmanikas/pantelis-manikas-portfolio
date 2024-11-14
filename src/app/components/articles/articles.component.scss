@@ -29,6 +29,12 @@
   }
 }
 
+.category ~ .category {
+  &::before {
+    content: ', ';
+  }
+}
+
 @include desktop {
   .articles {
     &__grid {

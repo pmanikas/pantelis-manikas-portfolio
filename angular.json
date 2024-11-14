@@ -70,7 +70,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-universal-developer-portfolio:build"
+            "browserTarget": "angular-universal-developer-portfolio:build",
+            "port": 1613
           },
           "configurations": {
             "production": {

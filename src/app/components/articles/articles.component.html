@@ -1,20 +1,21 @@
 <div class="articles">
   <div class="articles__grid">
     <div *ngFor="let article of articles" class="articles__item">
-      <a rel="noopener" [href]="article.url" target="_blank">
+      <a rel="noopener" [href]="'https://gamemedium.com/post/'+article.alias" target="_blank">
         <div class="articles__item__image__container">
           <div class="articles__item__image">
             <app-image-resource
-            [src]="article.image"
-            [alt]="article.title"
-            [width]="'550'"
-            [height]="'330'"
+            [src]="article.photo.medium.URL"
+            [alt]="article.photo.alt || article.name"
+            width="550"
+            height="330"
           ></app-image-resource>
           </div>
         </div>
-        <p class="subtitle--s">{{ article.type }}</p>
-        <h3 class="articles__item__title">{{ article.title }}</h3>
-        <p class="articles__item__excerpt">{{ article.excerpt }}</p>
+        <p class="subtitle--s">
+          <span *ngFor="let category of article.category" class="category">{{ category.name }}</span> | <span class="date">{{ article.created_at | date: 'MMM d, y' }}</span>
+        </p>
+        <h3 class="articles__item__title">{{ article.name }}</h3>
       </a>
     </div>
   </div>
