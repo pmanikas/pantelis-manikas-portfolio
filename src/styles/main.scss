@@ -1,4 +1,1 @@
-@use './theme' as *;
-@import './reset';
-@import './typography';
-@import './animations';
+@forward 'base';

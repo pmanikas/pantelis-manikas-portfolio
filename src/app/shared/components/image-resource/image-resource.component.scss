@@ -1,4 +1,4 @@
-@use './../../../../styles/theme' as *;
+@use './../../../../styles/abstracts' as *;
 
 .image__wrap {
   background: transparentize($c-black, 0.5);

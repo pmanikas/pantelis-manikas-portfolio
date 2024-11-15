@@ -12,6 +12,16 @@ import { BlogPage } from './blog/blog.page';
 import { ContactPage } from './contact/contact.page';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { CreditsComponent } from './components/credits/credits.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { NavComponent } from './components/nav/nav.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ServicesComponent } from './components/services/services.component';
+import { SocialMediaComponent } from './components/social-media/social-media.component';
+import { EmailSubscriptionComponent } from './components/email-subscription/email-subscription.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   imports: [
@@ -19,6 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SharedModule,
     PortfolioRoutingModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     PortfolioComponent,
@@ -28,7 +40,16 @@ import { FooterComponent } from './components/footer/footer.component';
     BlogPage,
     ContactPage,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ArticlesComponent,
+    CreditsComponent,
+    LogoComponent,
+    NavComponent,
+    ProjectsComponent,
+    ServicesComponent,
+    SocialMediaComponent,
+    EmailSubscriptionComponent,
+    HeroComponent
   ],
 })
 export class PortfolioModule { }

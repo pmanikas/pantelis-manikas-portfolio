@@ -10,7 +10,6 @@ export class CardComponent {
 
   @Input() theme: string = 'transparent';
   @Input() title: string = '';
-  @Input() details: string = '';
   @Input() link: string = '';
   @Input() bottomText: string = 'Find out more...';
 

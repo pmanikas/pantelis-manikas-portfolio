@@ -1,7 +1,4 @@
-@import './variables/colors';
-@import './variables/sizes';
-@import './variables/layers';
-@import './variables/mixins';
+@use './../abstracts' as *;
 
 html {
   scroll-behavior: smooth;

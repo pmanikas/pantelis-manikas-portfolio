@@ -1,5 +1,9 @@
 <a [href]="link" target="_blank" class="card" [ngClass]="['card--' + theme]">
-  <h3>{{ title }}</h3>
-  <p class="card__details">{{ details }}</p>
-  <span class="card__end">{{ bottomText }}</span>
+  <div class="card__header">
+    <h3>{{ title }}</h3>
+  </div>
+  <p class="card__main">
+    <ng-content></ng-content>
+  </p>
+  <div class="card__footer">{{ bottomText }}</div>
 </a>
