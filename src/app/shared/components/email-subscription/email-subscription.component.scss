@@ -1,0 +1,88 @@
+@use './../../../../styles/theme' as *;
+
+.email__sub {
+  width: 450px;
+  max-width: 95%;
+  margin: 0 auto;
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 0 1px rgb(0 0 0 / 5%), 0 1px 2px rgb(0 0 0 / 5%), 0 4px 8px rgb(0 0 0 / 8%);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  &__input__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    padding: 0 $s-l;
+  }
+  &__label {
+    font-size: 0.5rem;
+    color: $c-primary;
+  }
+  &__input {
+    width: 100%;
+    font-size: 0.8rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+  &__button {
+    position: relative;
+    height: 100%;
+    padding: 0.8rem;
+    color: $c-white;
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    &::before, &::after {
+      @include fill;
+
+      content: '';
+      z-index: $z-minus;
+    }
+    &::before {
+      background: $c-primary;
+    }
+    &::after {
+      background: $c-primary-faded;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+    &:active::after {
+      opacity: 0.8;
+    }
+  }
+  &__success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      color: $c-primary;
+    }
+  }
+  &__error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      color: $c-radical-red;
+    }
+  }
+  &__invalid {
+    font-size: 0.6rem;
+    color: $c-radical-red;
+  }
+}

@@ -1,0 +1,60 @@
+@use './../../../../styles/theme' as *;
+
+.card {
+  position: relative;
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  padding: $s-xxl;
+  border-radius: 6px;
+  transition: transform .3s ease-out;
+  &__details {
+    font-size: 0.8rem;
+    font-weight: 100;
+  }
+  &__end {
+    font-size: 0.9rem;
+  }
+  &:hover{
+    transform: scale(1.02) translateY(-$s-xs);
+    &::after {
+      opacity: 1;
+    }
+  }
+  &::before, &::after {
+    @include fill;
+    z-index: $z-minus;
+    content: '';
+    border-radius: 6px;
+    transition: opacity .3s ease-out;
+  }
+  &::before {
+    box-shadow: 0 1px 2px rgba(28, 35, 139, 0.1), 0 2px 5px rgba(41, 52, 204, 0.2);
+    opacity: 1;
+  }
+  &::after {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 7px 14px rgba(28, 35, 139, 0.15);
+    opacity: 0;
+  }
+
+  // Card Types
+  &--transparent {
+    color: $c-primary;
+  }
+  &--primary {
+    color: $c-white;
+    background: $c-primary;
+  }
+  &--primary--inverted {
+    color: $c-primary;
+    background: transparent;
+  }
+  &--secondary {
+    color: $c-white;
+    background: $c-secondary;
+  }
+  &--secondary--inverted {
+    color: $c-secondary;
+    background: transparent;
+  }
+}

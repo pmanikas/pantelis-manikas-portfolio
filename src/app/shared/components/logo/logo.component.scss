@@ -1,0 +1,7 @@
+@use './../../../../styles/theme' as *;
+
+.logo {
+  position: relative;
+  z-index: $z-highlight;
+  font-size: 0.75rem;
+}

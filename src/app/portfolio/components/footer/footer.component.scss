@@ -1,0 +1,34 @@
+@use './../../../../styles/theme' as *;
+
+.footer {
+  text-align: center;
+  background: $c-black;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: $s-tablet;
+    padding: $s-xxxl 0 $s-m;
+    margin: 0 auto;
+  }
+  &__title {
+    margin-bottom: $s-s;
+    color: transparentize($c-white, 0.5);
+  }
+  &__subtitle {
+    color: $c-white;
+    font-weight: bold;
+  }
+  &__details {
+    color: transparentize($c-white, 0.2);
+  }
+  &__button {
+    margin-bottom: $s-xxxl;
+  }
+  &__social {
+    margin-bottom: $s-l;
+  }
+  &__credits {
+    margin-bottom: $s-l;
+  }
+}

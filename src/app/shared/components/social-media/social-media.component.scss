@@ -1,0 +1,21 @@
+@use './../../../../styles/theme' as *;
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social__item~.social__item {
+  margin-left: $s-l;
+}
+
+.social__link {
+  font-size: 1.3rem;
+  color: $c-white;
+  opacity: 0.5;
+  transition: opacity .3s ease-out;
+  &:hover {
+    opacity: 1;
+  }
+}
