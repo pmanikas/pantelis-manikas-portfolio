@@ -20,17 +20,30 @@ jobs:
       with:
         node-version: '16.x'
 
-    - uses: actions/cache@v3 # this allows for re-using node_modules caching, making builds a bit faster.
+    - name: Cache node modules
+      id: cache-npm
+      uses: actions/cache@v3
+      env:
+          cache-name: cache-node-modules
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
+    - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+      name: List the state of node modules
+      continue-on-error: true
+      run: npm list
 
     - name: NPM Install
       run: npm install
+
     - name: NPM build Angular Production
       run: npm run build
+
     - name: Delete Existing Files
       run: sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'rm -rf public_html/pantelismanikas/pantelismanikas.com/*'
 
