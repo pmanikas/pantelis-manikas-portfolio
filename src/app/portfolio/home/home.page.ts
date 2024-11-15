@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/shared/models/article.model';
-import Project from 'src/app/shared/models/project.model';
-import Service from 'src/app/shared/models/service.model';
 import { ArticlesService } from 'src/app/core/services/articles.service';
 import { ProjectsService } from 'src/app/core/services/projects.service';
 import { ServicesService } from 'src/app/core/services/services.service';
+import { Project } from 'src/app/shared/models/project.model';
+import { Service } from 'src/app/shared/models/service.model';
 
 @Component({
   selector: 'app-home-page',

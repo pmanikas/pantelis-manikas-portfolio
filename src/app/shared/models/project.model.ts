@@ -1,15 +1,17 @@
-export default class Project {
+export class Project {
+  _id?: string | undefined;
   title: string;
+  type: string;
   url: string;
   image: string;
-  type: string;
   description: string;
+  _model?: string;
 
   constructor() {
-    this.title = '';
-    this.url = '';
-    this.image = '';
-    this.type = '';
     this.description = '';
+    this.image = '';
+    this.title = '';
+    this.type = '';
+    this.url = '';
   }
 }

@@ -1,0 +1,33 @@
+<div class="list__add__button">
+  <a [routerLink]="['/users/details/new']"
+  ><button class="list__button btn btn-success">Add <span class="list__button__model" *ngIf="users && users.length"> &nbsp;{{ users[0]['_model'] }}</span></button></a
+>
+</div>
+
+<ul class="list-group list">
+  <li
+    *ngFor="let user of users"
+    class="list-group-item list__item"
+  >
+    <div>
+      <img
+        [src]="user.image"
+        (alt)="(user.name)"
+        class="list__item__image"
+      />
+      &nbsp;
+      {{ user.name }} - {{ user.username }} - {{ user.email }}
+    </div>
+    <div>
+      <button
+        class="btn btn-danger"
+        (click)="deleteHandler(user)"
+        >DELETE</button
+      >
+      &nbsp;
+      <a [routerLink]="['/users/details/' + user._id]"
+        ><button class="btn">EDIT</button></a
+      >
+    </div>
+  </li>
+</ul>

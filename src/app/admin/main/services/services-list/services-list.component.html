@@ -1,0 +1,27 @@
+<div class="list__add__button">
+  <a [routerLink]="['/services/details/new']"
+  ><button class="list__button btn btn-success">Add <span class="list__button__model" *ngIf="services && services.length"> &nbsp;{{ services[0]['_model'] }}</span></button></a
+>
+</div>
+
+<ul class="list-group list">
+  <li
+    *ngFor="let service of services"
+    class="list-group-item list__item"
+  >
+    <div>
+      {{ service.title }}
+    </div>
+    <div>
+      <button
+        class="btn btn-danger"
+        (click)="deleteHandler(service)"
+        >DELETE</button
+      >
+      &nbsp;
+      <a [routerLink]="['/services/details/' + service._id]"
+        ><button class="btn">EDIT</button></a
+      >
+    </div>
+  </li>
+</ul>

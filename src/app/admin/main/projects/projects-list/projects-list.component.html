@@ -1,0 +1,33 @@
+<div class="list__add__button">
+  <a [routerLink]="['/projects/details/new']"
+  ><button class="list__button btn btn-success">Add <span class="list__button__model" *ngIf="projects && projects.length"> &nbsp;{{ projects[0]['_model'] }}</span></button></a
+>
+</div>
+
+<ul class="list-group list">
+  <li
+    *ngFor="let project of projects"
+    class="list-group-item list__item"
+  >
+    <div>
+      <img
+        [src]="project.image"
+        (alt)="(project.title)"
+        class="list__item__image"
+      />
+      &nbsp;
+      {{ project.title }}
+    </div>
+    <div>
+      <button
+        class="btn btn-danger"
+        (click)="deleteHandler(project)"
+        >DELETE</button
+      >
+      &nbsp;
+      <a [routerLink]="['/projects/details/' + project._id]"
+        ><button class="btn">EDIT</button></a
+      >
+    </div>
+  </li>
+</ul>

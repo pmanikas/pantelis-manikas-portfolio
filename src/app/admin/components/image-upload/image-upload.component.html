@@ -1,0 +1,7 @@
+
+    <div class="control-container">
+        <img [src]="src" *ngIf="src"/>
+        <input type="file" accept='image/*' (change)="onChange($event)" />
+        <div *ngIf="dragState === DRAG_STATE.ON" class="can-drop-info"><p>Drop image here</p></div>
+        <div *ngIf="dragState !== DRAG_STATE.ON && !src" class="instructions-info"><p>Click or Drag & Drop</p></div>
+    </div>

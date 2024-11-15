@@ -1,56 +1,49 @@
+export interface PhotoMeta {
+  URL: string;
+  webpURL: string;
+  width: number;
+  height: number;
+};
+
+export interface Photo {
+  alt: string;
+  large: PhotoMeta;
+  medium: PhotoMeta;
+  thumb: PhotoMeta;
+  mini: PhotoMeta;
+};
+
+export interface Author {
+  id: number;
+  username: string;
+  nickname: string;
+  alias: string;
+};
+
+export interface Category {
+  id: number;
+  name: string;
+  alias: string;
+}
+
+export interface Publish {
+    date: {
+      start: string;
+    };
+};
+
 export class Article {
   id: number;
   name: string;
   alias: string;
   updated_at: string;
   created_at: string;
-  photo: {
-    alt: string;
-    large: {
-      URL: string;
-      webpURL: string;
-      width: number;
-      height: number;
-    };
-    medium: {
-      URL: string;
-      webpURL: string;
-      width: number;
-      height: number;
-    };
-    thumb: {
-      URL: string;
-      webpURL: string;
-      width: number;
-      height: number;
-    };
-    mini: {
-      URL: string;
-      webpURL: string;
-      width: number;
-      height: number;
-    };
-  };
+  photo: Photo;
   nickname: string;
-  publish: {
-    date: {
-      start: string;
-    };
-  };
-  author: {
-    id: number;
-    username: string;
-    nickname: string;
-    alias: string;
-  };
+  publish: Publish;
+  author: Author;
   reading_duration: number;
-  category: [
-    {
-      id: number;
-      name: string;
-      alias: string;
-    }
-  ];
+  category: Category[];
 
   constructor() {
     this.id = 0;

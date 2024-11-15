@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ProjectsService } from 'src/app/core/services/projects.service';
-import Project from 'src/app/shared/models/project.model';
+import { Project } from 'src/app/shared/models/project.model';
 
 @Component({
   selector: 'app-projects-page',

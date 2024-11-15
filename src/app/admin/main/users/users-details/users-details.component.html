@@ -1,0 +1,25 @@
+<form (ngSubmit)="submitHandler()">
+  <div class="image-container">
+    <app-image-upload
+      [src]="user.image"
+      (imageLoaded)="imageLoaded($event)"
+    ></app-image-upload>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name" placeholder="John Doe">
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="johndoe" id="username" name="username">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="johh@doe.com" id="email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="*********" id="password" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

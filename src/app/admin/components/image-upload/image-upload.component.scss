@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-container {
+  position: relative;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  border: thin solid #333;
+  padding: 15px;
+
+}
+
+.instructions-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.can-drop-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: transparentize(#000, 0.5);
+}
+
+.can-drop-info p {
+  font-weight: 300;
+  margin: 0;
+}
+
+input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
