@@ -1,4 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ApppearanceService } from '../core/services/appearance.service';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -6,7 +8,22 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./admin.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit{
 
-  constructor() { }
+  constructor(
+    public appearanceService: ApppearanceService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.closeMenuOnNavigation();
+  }
+
+  private closeMenuOnNavigation() {
+    this.router.events.subscribe({
+      next: (event) => {
+        if (event instanceof NavigationEnd) this.appearanceService.hideAdminMenu();
+      }
+    });
+  }
 }

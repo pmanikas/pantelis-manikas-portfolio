@@ -1,33 +1,31 @@
 <div class="list__add__button">
   <a [routerLink]="['/admin/projects/details/new']"
-  ><button class="list__button btn btn-success">Add <span class="list__button__model" *ngIf="projects && projects.length"> &nbsp;{{ projects[0]['_model'] }}</span></button></a
+  ><app-button class="list__button btn btn-success">Add Project</app-button></a
 >
 </div>
 
-<ul class="list-group list">
-  <li
-    *ngFor="let project of projects"
-    class="list-group-item list__item"
-  >
-    <div>
-      <img
-        [src]="project.image"
-        (alt)="(project.title)"
-        class="list__item__image"
-      />
-      &nbsp;
-      {{ project.title }}
-    </div>
-    <div>
-      <button
-        class="btn btn-danger"
-        (click)="deleteHandler(project)"
-        >DELETE</button
-      >
-      &nbsp;
-      <a [routerLink]="['/admin/projects/details/' + project._id]"
-        ><button class="btn">EDIT</button></a
-      >
-    </div>
-  </li>
-</ul>
+<div class="projects">
+  <div *ngFor="let project of projects">
+    <app-card>
+      <div>
+        <img
+          [src]="project.image"
+          (alt)="(project.title)"
+          class="item-image"
+        />
+        &nbsp;
+        {{ project.title }}
+      </div>
+      <div>
+        <app-button
+          (click)="deleteHandler(project)"
+          >DELETE</app-button
+        >
+        &nbsp;
+        <a [routerLink]="['/admin/projects/details/' + project._id]"
+          ><app-button class="btn">EDIT</app-button></a
+        >
+      </div>
+    </app-card>
+  </div>
+</div>

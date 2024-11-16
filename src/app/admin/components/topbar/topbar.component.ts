@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { filter } from "rxjs/operators";
+import { ApppearanceService } from "src/app/core/services/appearance.service";
 import { AuthService } from "src/app/core/services/auth.service";
 
 @Component({
@@ -14,7 +15,8 @@ export class TopbarComponent implements OnInit {
   constructor(
     private router: Router,
     public authService: AuthService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public appearanceService: ApppearanceService
   ) {}
 
   ngOnInit(): void {
@@ -36,5 +38,9 @@ export class TopbarComponent implements OnInit {
       .subscribe({
         next: () => this.getCurrentRouteTitle()
       });
+  }
+
+  public toggleMenu(): void {
+    this.appearanceService.toggleAdminMenu();
   }
 }

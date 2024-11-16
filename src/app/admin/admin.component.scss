@@ -19,9 +19,24 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: $z-highlight;
+  width: 200px;
   height: 100vh;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.admin-main {
+  min-height: 100vh;
+
+  &.frozen {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 .admin-router {
@@ -38,8 +53,9 @@
     position: sticky;
     top: 0;
     left: unset;
-    transform: unset;
     align-self: flex-start;
+    width: unset;
+    transform: unset;
   }
 
   .admin-router {

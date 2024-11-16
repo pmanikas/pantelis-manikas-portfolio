@@ -1,3 +1,8 @@
 <div class="topbar-wrapper">
   <h1 class="title">{{ title }}</h1>
+  <div class="menu-toggle-button" (click)="toggleMenu()" [class.open]="appearanceService.$isAdminMenuVisible | async">
+    <span class="patty"></span>
+    <span class="patty"></span>
+    <span class="patty"></span>
+  </div>
 </div>

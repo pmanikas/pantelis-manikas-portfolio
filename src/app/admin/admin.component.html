@@ -1,9 +1,9 @@
 <div class="top-line"></div>
 <div class="admin-wrapper">
-    <aside class="admin-sidebar">
+    <aside class="admin-sidebar" [class.open]="appearanceService.$isAdminMenuVisible | async">
       <app-sidebar></app-sidebar>
     </aside>
-    <main class="admin-main">
+    <main class="admin-main" [class.frozen]="appearanceService.$isAdminMenuVisible | async">
       <app-topbar></app-topbar>
       <app-separator [inverted]="true"></app-separator>
       <div class="admin-router">

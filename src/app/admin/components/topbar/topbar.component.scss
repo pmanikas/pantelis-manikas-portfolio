@@ -12,8 +12,45 @@
   margin: 0;
 }
 
+.menu-toggle-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+
+  &.open {
+    .patty {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+}
+
+.patty {
+  width: 20px;
+  height: 2px;
+  background: $c-primary;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
 @include desktop {
   .topbar-wrapper {
     padding: $s-l;
+  }
+
+  .menu-toggle-button {
+    display: none;
   }
 }
