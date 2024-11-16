@@ -1,0 +1,12 @@
+@use './../../../../styles/abstracts' as *;
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: $c-quill-gray;
+  opacity: 0.1;
+
+  &.inverted {
+    background: $c-steel-gray;
+  }
+}

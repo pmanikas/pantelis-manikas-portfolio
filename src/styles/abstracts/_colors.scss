@@ -1,6 +1,12 @@
 // Color Names inspired by https://chir.ag/projects/name-that-color
 $c-white: #ffffff;
+$c-quill-gray: #d5d4d0;
+$c-desert-storm: #eeeeec;
+
 $c-black: #000000;
+$c-shark-black: #1e1e24;
+$c-steel-gray: #1e1e2f;
+
 
 $c-blue-ribbon: #3340FF;
 $c-azure-radiance: #0087fe;
@@ -17,3 +23,9 @@ $c-secondary-faded: $c-french-rose;
 
 // Elements
 $c-faded-text: transparentize($c-black, 0.2);
+
+// Gradients
+$c-gradient: linear-gradient(90deg, $c-primary, $c-secondary);
+$c-gradient-faded: linear-gradient(90deg, $c-primary-faded, $c-secondary-faded);
+$c-gradient-dark: linear-gradient($c-steel-gray, $c-shark-black);
+$c-gradient-light: linear-gradient($c-quill-gray, $c-quill-gray, $c-desert-storm);

@@ -14,7 +14,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { CreditsComponent } from './components/credits/credits.component';
-import { LogoComponent } from './components/logo/logo.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ServicesComponent } from './components/services/services.component';
@@ -43,7 +42,6 @@ import { HeroComponent } from './components/hero/hero.component';
     FooterComponent,
     ArticlesComponent,
     CreditsComponent,
-    LogoComponent,
     NavComponent,
     ProjectsComponent,
     ServicesComponent,

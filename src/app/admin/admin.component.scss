@@ -1,40 +1,45 @@
-// @forward "~ngx-toastr/toastr";
-// @forward "./../../styles/vendors/black-dashboard";
+@use './../../styles/abstracts' as *;
 
-#toast-container .toast {
-  box-shadow: none !important;
+.admin-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: $c-gradient-light;
+  border-top: 2px solid $c-secondary-faded;
 }
 
-img {
-  object-fit: cover;
+.admin-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 2px);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
 
-.image-container {
-  height: 12rem;
-  width: 12rem;
+.admin-router {
+  padding: 0 $s-m;
 }
 
-.list {
-  margin-top: 15px;
-  &__add__button {
-    display: flex;
-    justify-content: flex-end;
+@include desktop {
+  .admin-wrapper  {
+    display: grid;
+    grid-template-columns: 200px 1fr;
   }
-  &__button {
-    display: flex;
+
+  .admin-sidebar {
+    position: sticky;
+    top: 0;
+    left: unset;
+    transform: unset;
   }
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(45deg, #1e1e2f, #1e1e24);
-    border: none;
+
+  .admin-router {
+    padding: $s-l;
   }
-  &__item ~ &__item {
-    border-top: 1px solid #27293d;
-  }
-  &__item__image {
-    width: 40px;
-    height: 40px;
+}
+
+@include widescreen {
+  .admin-wrapper  {
+    grid-template-columns: 300px 1fr;
   }
 }

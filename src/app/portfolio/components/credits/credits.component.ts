@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CreditsComponent {
 
-  constructor() { }
+  public currentYear: number = new Date().getFullYear();
 
+  constructor() { }
 }

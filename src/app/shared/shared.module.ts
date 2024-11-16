@@ -7,6 +7,9 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { DeferLoadDirective } from './directives/defer-load.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { LogoComponent } from './components/logo/logo.component';
+import { SeparatorComponent } from './components/separator/separator.component';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
   imports: [
@@ -19,14 +22,20 @@ import { RouterModule } from '@angular/router';
     ImageResourceComponent,
     CardComponent,
     LoaderComponent,
-    DeferLoadDirective
+    LogoComponent,
+    DeferLoadDirective,
+    SeparatorComponent,
+    IconComponent
   ],
   exports: [
     ButtonComponent,
     ImageResourceComponent,
     CardComponent,
     LoaderComponent,
-    DeferLoadDirective
+    LogoComponent,
+    SeparatorComponent,
+    IconComponent,
+    DeferLoadDirective,
   ]
 })
 export class SharedModule { }

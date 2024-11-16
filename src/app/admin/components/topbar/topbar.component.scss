@@ -1,0 +1,14 @@
+@use './../../../../styles/abstracts' as *;
+
+.topbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $s-m;
+}
+
+@include desktop {
+  .topbar-wrapper {
+    padding: $s-l;
+  }
+}

@@ -1,0 +1,37 @@
+@use './../../../../styles/abstracts' as *;
+
+.sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $s-m;
+  background: $c-gradient-dark;
+  height: 100%;
+  padding: $s-m;
+  color: $c-desert-storm;
+}
+
+.logo {
+  line-height: 1;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: $s-xl;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: $s-m;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+@include desktop {
+  .sidebar-wrapper {
+    padding: $s-l;
+    gap: $s-l;
+  }
+}

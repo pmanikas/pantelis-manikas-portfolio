@@ -1,18 +1,32 @@
-<div class="logo">
-  <a [routerLink]="['admin/dashboard']" class="simple-text logo-normal">
-    PMANIKAS PORT ADMIN
-  </a>
-</div>
 <div class="sidebar-wrapper">
-  <ul class="nav">
-    <li
-      routerLinkActive="active"
-      *ngFor="let menuItem of menuItems"
-      class="{{ menuItem.class }} nav-item"
-    >
-      <a [routerLink]="[menuItem.path]">
-        <p>{{ menuItem.title }}</p>
-      </a>
-    </li>
-  </ul>
+  <app-logo class="logo" url="/admin"></app-logo>
+  <app-separator class="separator"></app-separator>
+  <nav class="nav">
+    <ul class="menu">
+      <li routerLinkActive="active" class="menu-item">
+        <a class="menu-link" routerLink="/admin/dashboard">
+          <app-icon [icon]="faHome" class="menu-icon"></app-icon>
+          <span class="menu-name">Dashboard</span>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="menu-item">
+        <a class="menu-link" routerLink="/admin/projects/list">
+          <app-icon [icon]="faTask" class="menu-icon"></app-icon>
+          <span class="menu-name">Projects</span>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="menu-item">
+        <a class="menu-link" routerLink="/admin/services/list">
+          <app-icon [icon]="faCog" class="menu-icon"></app-icon>
+          <span class="menu-name">Services</span>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="menu-item">
+        <a class="menu-link" routerLink="/admin/users/list">
+          <app-icon [icon]="faUser" class="menu-icon"></app-icon>
+          <span class="menu-name">Users</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>

@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div class="admin-wrapper">
+    <aside class="admin-sidebar">
+      <app-sidebar></app-sidebar>
+    </aside>
+    <main class="admin-main">
+      <app-topbar></app-topbar>
+      <app-separator [inverted]="true"></app-separator>
+      <div class="admin-router">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+</div>
