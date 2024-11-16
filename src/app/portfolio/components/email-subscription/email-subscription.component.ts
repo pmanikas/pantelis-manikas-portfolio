@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { EmailsService } from 'src/app/core/services/emails.service';
 
@@ -10,7 +10,7 @@ import { EmailsService } from 'src/app/core/services/emails.service';
 })
 export class EmailSubscriptionComponent {
 
-  public form: FormGroup = this.formBuilder.group({
+  public form: UntypedFormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
   });
 
@@ -22,7 +22,7 @@ export class EmailSubscriptionComponent {
   public faSpinner: any = faSpinner;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private emailsService: EmailsService,
   ) { }
 
