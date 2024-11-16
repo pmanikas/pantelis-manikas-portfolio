@@ -11,13 +11,13 @@
       </li>
       <li routerLinkActive="active" class="menu-item">
         <a class="menu-link" routerLink="/admin/projects/list">
-          <app-icon [icon]="faTask" class="menu-icon"></app-icon>
+          <app-icon [icon]="faStart" class="menu-icon"></app-icon>
           <span class="menu-name">Projects</span>
         </a>
       </li>
       <li routerLinkActive="active" class="menu-item">
         <a class="menu-link" routerLink="/admin/services/list">
-          <app-icon [icon]="faCog" class="menu-icon"></app-icon>
+          <app-icon [icon]="faGift" class="menu-icon"></app-icon>
           <span class="menu-name">Services</span>
         </a>
       </li>
@@ -29,4 +29,24 @@
       </li>
     </ul>
   </nav>
+  <div class="sidebar-footer">
+    <app-separator></app-separator>
+    <div class="sidebar-user">
+      <app-avatar imageUrl="assets/icons/avatar.png" title="Admin" size="small"></app-avatar>
+      <span class="sidebar-username">Admin</span>
+      <app-dropdown>
+        <div class="trigger-settings" dropdownTrigger>
+          <app-icon [icon]="faCog"></app-icon>
+        </div>
+        <nav dropdownContent>
+          <ul>
+            <li>
+              <span class="nav-item" (click)="logoutHandler()">Log out</span>
+            </li>
+          </ul>
+        </nav>
+      </app-dropdown>
+    </div>
+
+  </div>
 </div>

@@ -1,0 +1,71 @@
+@use './../../../../styles/abstracts' as *;
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: fixed;
+  min-width: 200px;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+  margin-top: 8px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out,
+              transform 150ms ease-in-out;
+  visibility: hidden;
+  /* Prevent content from causing horizontal scrolling */
+  max-width: calc(100vw - 24px);
+  overflow-x: hidden;
+  /* Allow vertical scrolling if content is too tall */
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+}
+
+.dropdown-content.open {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dropdown-content-top {
+  margin-top: 0;
+  margin-bottom: 8px;
+  transform: translateY(10px);
+}
+
+.dropdown-content-top.open {
+  transform: translateY(0);
+}
+
+/* Add a subtle border and background for better visibility */
+.dropdown-content {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(255, 255, 255, 0.98) 100%);
+}
+
+/* Add smooth scrollbar for webkit browsers */
+.dropdown-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}

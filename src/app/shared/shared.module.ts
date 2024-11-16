@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router';
 import { LogoComponent } from './components/logo/logo.component';
 import { SeparatorComponent } from './components/separator/separator.component';
 import { IconComponent } from './components/icon/icon.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
   imports: [
@@ -23,9 +26,12 @@ import { IconComponent } from './components/icon/icon.component';
     CardComponent,
     LoaderComponent,
     LogoComponent,
-    DeferLoadDirective,
     SeparatorComponent,
-    IconComponent
+    IconComponent,
+    DropdownComponent,
+    DeferLoadDirective,
+    ClickOutsideDirective,
+    AvatarComponent
   ],
   exports: [
     ButtonComponent,
@@ -35,7 +41,10 @@ import { IconComponent } from './components/icon/icon.component';
     LogoComponent,
     SeparatorComponent,
     IconComponent,
+    DropdownComponent,
+    AvatarComponent,
     DeferLoadDirective,
+    ClickOutsideDirective
   ]
 })
 export class SharedModule { }

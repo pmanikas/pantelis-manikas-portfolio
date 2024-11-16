@@ -40,32 +40,30 @@ export class ServicesDetailsComponent implements OnInit {
   }
 
   private getById(id: string):void {
-    this.servicesService.getById(id).subscribe((service: Service) => {
-      this.service = service;
+    this.servicesService.getById(id).subscribe({
+      next: (service: Service) => this.service = service
     })
   }
 
   private addService(service: Service): void {
     this.isLoading = true;
-    this.servicesService.add(service).subscribe((_res: any) => {
-      this.isLoading = false;
-      this.alertService.success('Service has been Added');
-      this.router.navigate(['/services/list']);
+    this.servicesService.add(service).subscribe({
+      next: () => {
+        this.isLoading = false;
+        this.alertService.success('Service has been Added');
+        this.router.navigate(['/admin/services/list']);
+      }
     });
   }
 
   private editService(service: Service): void {
     this.isLoading = true;
-    this.servicesService.edit(service).subscribe((service: any) => {
-      this.isLoading = false;
-      this.service = service;
-      this.alertService.success('Service has been Edited');
+    this.servicesService.edit(service).subscribe({
+      next:(service: Service) => {
+        this.isLoading = false;
+        this.service = service;
+        this.alertService.success('Service has been Edited');
+      }
     });
   }
-
-  // private errorHandler(error: string): void {
-  //   this.error = true;
-  //   this.errorMessage = error;
-  // }
-
 }

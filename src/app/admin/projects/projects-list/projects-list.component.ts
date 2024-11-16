@@ -24,17 +24,19 @@ export class ProjectsListComponent implements OnInit {
 
   private getAll():void {
     this.projectsService.getAll()
-      .subscribe(projects => {
-        this.projects = projects;
+      .subscribe({
+        next: (projects: Project[]) => this.projects = projects
       })
   }
 
   public deleteHandler(project: Project):void {
     if(!confirm(`Are you sure you want to remove project ${project.title}?`)) return;
     this.projectsService.remove(project._id)
-      .subscribe((_res: any) => {
-        this.deleteLocally(project._id);
-        this.alertService.success(`Project ${project.title} has been successfully removed`);
+      .subscribe({
+        next: () => {
+          this.deleteLocally(project._id);
+          this.alertService.success(`Project ${project.title} has been successfully removed`);
+        }
       })
   }
 
@@ -42,5 +44,4 @@ export class ProjectsListComponent implements OnInit {
     const projects = this.projects.filter(project => project._id !== id);
     this.projects = projects;
   }
-
 }

@@ -29,9 +29,28 @@
   margin: 0;
 }
 
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: $s-m;
+  margin-top: auto;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $s-xs;
+  font-size: 0.75rem;
+}
+
 @include desktop {
   .sidebar-wrapper {
     padding: $s-l;
+    gap: $s-l;
+  }
+
+  .sidebar-footer {
     gap: $s-l;
   }
 }

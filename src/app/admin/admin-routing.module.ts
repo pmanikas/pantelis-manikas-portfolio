@@ -20,15 +20,21 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'dashboard',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'dashboard',
         component: DashboardComponent,
+        data: {
+          title: 'Dashboard plop'
+        }
       },
       {
         path: 'users',
         component: UsersComponent,
+        data: {
+          title: 'Users'
+        },
         children: [
           {
             path: 'list',
@@ -43,6 +49,9 @@ const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsComponent,
+        data: {
+          title: 'Projects'
+        },
         children: [
           {
             path: 'list',

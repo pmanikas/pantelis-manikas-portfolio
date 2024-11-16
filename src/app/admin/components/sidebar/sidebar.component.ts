@@ -1,5 +1,8 @@
-import { Component, Input } from "@angular/core";
-import { faCog, faHome, faTasks, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { faCog, faGift, faHome, faStar, faUser } from "@fortawesome/free-solid-svg-icons";
+import { AlertService } from "src/app/core/services/alert.service";
+import { AuthService } from "src/app/core/services/auth.service";
 import { MenuItem } from "src/app/shared/models/menu.model";
 
 @Component({
@@ -9,11 +12,11 @@ import { MenuItem } from "src/app/shared/models/menu.model";
 })
 
 export class SidebarComponent {
-
-  public faHome = faHome;
-  public faTask = faTasks;
-  public faCog = faCog;
+  public faHome = faHome;;
+  public faStart = faStar;
+  public faGift = faGift;
   public faUser = faUser;
+  public faCog = faCog;
 
   menuItems: MenuItem[] = [
     {
@@ -38,6 +41,16 @@ export class SidebarComponent {
     },
   ];
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    public authService: AuthService,
+    private alertService: AlertService
+  ) {}
+
+  public logoutHandler():void {
+    this.authService.logout();
+    this.alertService.success('Logged out');
+    this.router.navigate(['/auth/login']);
+  }
 
 }

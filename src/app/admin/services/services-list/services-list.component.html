@@ -1,5 +1,5 @@
 <div class="list__add__button">
-  <a [routerLink]="['/services/details/new']"
+  <a [routerLink]="['/admin/services/details/new']"
   ><button class="list__button btn btn-success">Add <span class="list__button__model" *ngIf="services && services.length"> &nbsp;{{ services[0]['_model'] }}</span></button></a
 >
 </div>
@@ -19,7 +19,7 @@
         >DELETE</button
       >
       &nbsp;
-      <a [routerLink]="['/services/details/' + service._id]"
+      <a [routerLink]="['/admin/services/details/' + service._id]"
         ><button class="btn">EDIT</button></a
       >
     </div>

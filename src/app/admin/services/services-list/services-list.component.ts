@@ -24,17 +24,20 @@ export class ServicesListComponent implements OnInit {
 
   private getAll():void {
     this.servicesService.getAll()
-      .subscribe(services => {
-        this.services = services;
+      .subscribe({
+        next: (services: Service[]) => this.services = services
       })
   }
 
   public deleteHandler(service: Service):void {
     if(!confirm(`Are you sure you want to remove service ${service.title}?`)) return;
+
     this.servicesService.remove(service._id)
-      .subscribe((_res: any) => {
-        this.deleteLocally(service._id);
-        this.alertService.success(`Service ${service.title} has been successfully removed`);
+      .subscribe({
+        next: () => {
+          this.deleteLocally(service._id);
+          this.alertService.success('Service has been removed');
+        }
       })
   }
 
@@ -42,5 +45,4 @@ export class ServicesListComponent implements OnInit {
     const services = this.services.filter(service => service._id !== id);
     this.services = services;
   }
-
 }

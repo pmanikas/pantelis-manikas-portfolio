@@ -41,26 +41,30 @@ export class UsersDetailsComponent implements OnInit {
   }
 
   private getById(id: string):void {
-    this.usersService.getById(id).subscribe((user: User) => {
-      this.user = user;
+    this.usersService.getById(id).subscribe({
+      next: (user: User) => this.user = user
     })
   }
 
   private addUser(user: User): void {
     this.isLoading = true;
-    this.usersService.add(user).subscribe((_res: any) => {
-      this.alertService.success('User has been Added');
-      this.router.navigate(['/users/list']);
-      this.isLoading = false;
+    this.usersService.add(user).subscribe({
+      next: () => {
+        this.alertService.success('User has been Added');
+        this.router.navigate(['/admin/users/list']);
+        this.isLoading = false;
+      }
     });
   }
 
   private editUser(user: User): void {
     this.isLoading = true;
-    this.usersService.edit(user).subscribe((user: any) => {
-      this.user = user;
-      this.alertService.success('User has been Edited');
-      this.isLoading = false;
+    this.usersService.edit(user).subscribe({
+      next: (user: User) => {
+        this.user = user;
+        this.alertService.success('User has been Edited');
+        this.isLoading = false;
+      }
     });
   }
 
@@ -71,15 +75,13 @@ export class UsersDetailsComponent implements OnInit {
   private uploadImage(data: FormData): void {
     this.isLoading = true;
     this.uploadImagesService.upload(data)
-      .subscribe((data: any) => {
-        this.isLoading = false;
-        this.user.image = data.location;
+      .subscribe( {
+        next: (data: any) => {
+          console.log({ uploadImageData: data });
+
+          this.isLoading = false;
+          this.user.image = data.location;
+        }
       });
   }
-
-  // private errorHandler(error: string): void {
-  //   this.error = true;
-  //   this.errorMessage = error;
-  // }
-
 }

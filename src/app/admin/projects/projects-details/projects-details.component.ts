@@ -44,26 +44,30 @@ export class ProjectsDetailsComponent implements OnInit {
   }
 
   private getById(id: string):void {
-    this.projectsService.getById(id).subscribe((project: Project) => {
-      this.project = project;
+    this.projectsService.getById(id).subscribe({
+      next: (project: Project) => this.project = project
     })
   }
 
   private addProject(project: Project): void {
     this.isLoading = true;
-    this.projectsService.add(project).subscribe((_res: any) => {
-      this.isLoading = false;
-      this.alertService.success('Project has been Added');
-      this.router.navigate(['/projects/list']);
+    this.projectsService.add(project).subscribe({
+      next: () => {
+        this.isLoading = false;
+        this.alertService.success('Project has been Added');
+        this.router.navigate(['/admin/projects/list']);
+      }
     });
   }
 
   private editProject(project: Project): void {
     this.isLoading = true;
-    this.projectsService.edit(project).subscribe((project: any) => {
-      this.isLoading = false;
-      this.project = project;
-      this.alertService.success('Project has been Edited');
+    this.projectsService.edit(project).subscribe({
+      next: (project: Project) => {
+        this.isLoading = false;
+        this.project = project;
+        this.alertService.success('Project has been Edited');
+      }
     });
   }
 
@@ -74,15 +78,13 @@ export class ProjectsDetailsComponent implements OnInit {
   private uploadImage(data: FormData): void {
     this.isLoading = true;
     this.uploadImagesService.upload(data)
-      .subscribe((data: any) => {
-        this.isLoading = false;
-        this.project.image = data.location;
+      .subscribe({
+        next: (data: any) => {
+          console.log({ uploadImageData: data });
+
+          this.isLoading = false;
+          this.project.image = data.location;
+        }
       });
   }
-
-  // private errorHandler(error: string): void {
-  //   this.error = true;
-  //   this.errorMessage = error;
-  // }
-
 }

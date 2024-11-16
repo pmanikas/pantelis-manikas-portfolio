@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { AlertService } from "src/app/core/services/alert.service";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
+import { filter } from "rxjs/operators";
 import { AuthService } from "src/app/core/services/auth.service";
 
 @Component({
@@ -8,17 +8,33 @@ import { AuthService } from "src/app/core/services/auth.service";
   templateUrl: "./topbar.component.html",
   styleUrls: ["./topbar.component.scss"]
 })
-export class TopbarComponent {
+export class TopbarComponent implements OnInit {
+  public title: string = "";
 
   constructor(
     private router: Router,
     public authService: AuthService,
-    private alertService: AlertService
+    private activatedRoute: ActivatedRoute
   ) {}
 
-  public logoutHandler():void {
-    this.authService.logout();
-    this.alertService.success('Logged out');
-    this.router.navigate(['/auth/login']);
+  ngOnInit(): void {
+    this.getCurrentRouteTitle();
+    this.chechForRouteChange();
+  }
+
+  private getCurrentRouteTitle() {
+    this.activatedRoute.firstChild?.data.subscribe(data => {
+      this.title = data.title || "?";
+    });
+  }
+
+  private chechForRouteChange() {
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+      )
+      .subscribe({
+        next: () => this.getCurrentRouteTitle()
+      });
   }
 }

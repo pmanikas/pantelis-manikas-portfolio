@@ -1,0 +1,15 @@
+<div class="dropdown-container" (clickOutside)="close()" appClickOutside>
+  <div class="trigger" (click)="toggle()" #triggerEl>
+    <ng-content select="[dropdownTrigger]"></ng-content>
+  </div>
+
+  <div class="dropdown-content"
+       [class.open]="isOpen"
+       [style.top.px]="dropdownTop"
+       [style.left.px]="dropdownLeft"
+       [style.right.px]="dropdownRight"
+       [class.dropdown-content-top]="openUpward"
+       #contentEl>
+    <ng-content select="[dropdownContent]"></ng-content>
+  </div>
+</div>
