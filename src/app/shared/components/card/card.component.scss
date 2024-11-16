@@ -54,9 +54,10 @@
     background: $c-primary;
   }
 
-  &--primary--inverted {
+  &--primary-inverted {
     color: $c-primary;
     background: transparent;
+    border: 1px solid currentColor;
   }
 
   &--secondary {
@@ -64,8 +65,9 @@
     background: $c-secondary;
   }
 
-  &--secondary--inverted {
+  &--secondary-inverted {
     color: $c-secondary;
     background: transparent;
+    border: 1px solid currentColor;
   }
 }

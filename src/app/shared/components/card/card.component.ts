@@ -8,11 +8,10 @@ import { Component, Input } from '@angular/core';
 
 export class CardComponent {
 
-  @Input() theme: string = 'transparent';
+  @Input() theme: string = 'transparent'; // primary, secondary, primary-inverted, secondary-inverted, transparent
   @Input() title: string = '';
   @Input() link: string = '';
-  @Input() bottomText: string = 'Find out more...';
+  @Input() bottomText: string = '';
 
   constructor() { }
-
 }

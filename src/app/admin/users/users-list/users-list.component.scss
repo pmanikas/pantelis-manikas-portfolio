@@ -1,0 +1,13 @@
+@use './../../../../styles/abstracts' as *;
+
+.users-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: $s-m;
+}
+
+.user-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}

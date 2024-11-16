@@ -1,33 +1,20 @@
-<div class="list__add__button">
-  <a [routerLink]="['/admin/users/details/new']"
-  ><button class="list__button btn btn-success">Add <span class="list__button__model" *ngIf="users && users.length"> &nbsp;{{ users[0]['_model'] }}</span></button></a
->
+<div>
+  <a [routerLink]="['/admin/users/details/new']"><app-button>Add User</app-button></a>
 </div>
 
-<ul class="list-group list">
-  <li
-    *ngFor="let user of users"
-    class="list-group-item list__item"
-  >
-    <div>
-      <img
-        [src]="user.image"
-        (alt)="(user.name)"
-        class="list__item__image"
-      />
-      &nbsp;
-      {{ user.name }} - {{ user.username }} - {{ user.email }}
-    </div>
-    <div>
-      <button
-        class="btn btn-danger"
-        (click)="deleteHandler(user)"
-        >DELETE</button
-      >
-      &nbsp;
-      <a [routerLink]="['/admin/users/details/' + user._id]"
-        ><button class="btn">EDIT</button></a
-      >
-    </div>
-  </li>
-</ul>
+<div class="users-list">
+  <div *ngFor="let user of users">
+    <app-card class="user-card" theme="primary-inverted" [title]="user.name" >
+      <div>
+        <img class="user-image" [src]="user.image" (alt)="(user.name)" />
+        &nbsp;
+        {{ user.email }}
+      </div>
+      <div>
+        <app-button (click)="deleteHandler(user)">DELETE</app-button>
+        &nbsp;
+        <a [routerLink]="['/admin/users/details/' + user._id]"><app-button class="btn">EDIT</app-button></a>
+      </div>
+    </app-card>
+  </div>
+</div>

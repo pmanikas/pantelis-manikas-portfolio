@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { ProjectsService } from 'src/app/core/services/projects.service';
 import { UploadImagesService } from 'src/app/core/services/upload-images.service';
+import { UploadImage } from 'src/app/shared/models/image.model';
 import { Project } from 'src/app/shared/models/project.model';
 
 
@@ -79,11 +80,9 @@ export class ProjectsDetailsComponent implements OnInit {
     this.isLoading = true;
     this.uploadImagesService.upload(data)
       .subscribe({
-        next: (data: any) => {
-          console.log({ uploadImageData: data });
-
+        next: (imageData: UploadImage) => {
           this.isLoading = false;
-          this.project.image = data.location;
+          this.project.image = imageData.location;
         }
       });
   }

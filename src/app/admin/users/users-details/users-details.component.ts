@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { UploadImagesService } from 'src/app/core/services/upload-images.service';
 import { UsersService } from 'src/app/core/services/users.service';
+import { UploadImage } from 'src/app/shared/models/image.model';
 import { User } from 'src/app/shared/models/user.model';
 
 @Component({
@@ -76,11 +77,9 @@ export class UsersDetailsComponent implements OnInit {
     this.isLoading = true;
     this.uploadImagesService.upload(data)
       .subscribe( {
-        next: (data: any) => {
-          console.log({ uploadImageData: data });
-
+        next: (imageData: UploadImage) => {
           this.isLoading = false;
-          this.user.image = data.location;
+          this.user.image = imageData.location;
         }
       });
   }
