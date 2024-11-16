@@ -55,18 +55,3 @@
     @content;
   }
 }
-
-@mixin scrollableWrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  > * {
-    flex: 0 0 auto;
-  }
-}

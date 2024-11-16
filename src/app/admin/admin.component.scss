@@ -1,17 +1,25 @@
 @use './../../styles/abstracts' as *;
 
+.top-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-highlight;
+  width: 100%;
+  border-top: 2px solid $c-secondary-faded;
+}
+
 .admin-wrapper {
   width: 100%;
-  height: 100vh;
   background: $c-gradient-light;
-  border-top: 2px solid $c-secondary-faded;
+  overflow: visible;
 }
 
 .admin-sidebar {
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(100vh - 2px);
+  height: 100vh;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
@@ -31,6 +39,7 @@
     top: 0;
     left: unset;
     transform: unset;
+    align-self: flex-start;
   }
 
   .admin-router {
