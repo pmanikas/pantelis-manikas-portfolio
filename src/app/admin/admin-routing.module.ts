@@ -26,7 +26,7 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         data: {
-          title: 'Dashboard plop'
+          title: 'Dashboard'
         }
       },
       {
@@ -38,11 +38,11 @@ const routes: Routes = [
         children: [
           {
             path: 'list',
-            component: UsersListComponent
+            component: UsersListComponent,
           },
           {
             path: 'details/:id',
-            component: UsersDetailsComponent
+            component: UsersDetailsComponent,
           }
         ]
       },
@@ -66,6 +66,9 @@ const routes: Routes = [
       {
         path: 'services',
         component: ServicesComponent,
+        data: {
+          title: 'Services'
+        },
         children: [
           {
             path: 'list',
