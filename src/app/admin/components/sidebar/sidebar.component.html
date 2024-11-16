@@ -39,14 +39,16 @@
           <app-icon [icon]="faCog"></app-icon>
         </div>
         <nav dropdownContent>
-          <ul>
-            <li>
-              <span class="nav-item" (click)="logoutHandler()">Log out</span>
+          <ul class="settings-menu">
+            <li class="settings-item" routerLink="/">
+              Visit Portfolio
+            </li>
+            <li class="settings-item" (click)="logoutHandler()">
+              Log out
             </li>
           </ul>
         </nav>
       </app-dropdown>
     </div>
-
   </div>
 </div>

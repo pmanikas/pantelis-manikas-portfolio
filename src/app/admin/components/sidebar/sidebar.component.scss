@@ -44,6 +44,29 @@
   font-size: 0.75rem;
 }
 
+.settings-menu {
+  display: flex;
+  flex-direction: column;
+  gap: $s-s;
+  padding: $s-m;
+  background-color: $c-desert-storm;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: $s-s;
+  padding: $s-s $s-m;
+  color: $c-steel-gray;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background: $c-primary;
+    color: $c-desert-storm;
+  }
+}
+
 @include desktop {
   .sidebar-wrapper {
     padding: $s-l;
