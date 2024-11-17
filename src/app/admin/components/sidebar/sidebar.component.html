@@ -32,20 +32,20 @@
   <div class="sidebar-footer">
     <app-separator></app-separator>
     <div class="sidebar-user">
-      <app-avatar imageUrl="assets/icons/avatar.png" title="Admin" size="small"></app-avatar>
-      <span class="sidebar-username">Admin</span>
+      <a routerLink="/admin/users/details/{{ user?._id }}" class="avatar-link">
+        <app-avatar imageUrl="{{ user?.image || 'assets/icons/avatar.png' }}" title="Admin" size="small"></app-avatar>
+      </a>
+      <span class="sidebar-username">{{ user?.name }}</span>
       <app-dropdown>
         <div class="trigger-settings" dropdownTrigger>
           <app-icon [icon]="faCog"></app-icon>
         </div>
         <nav dropdownContent>
           <ul class="settings-menu">
-            <li class="settings-item" routerLink="/">
-              Visit Portfolio
-            </li>
-            <li class="settings-item" (click)="logoutHandler()">
-              Log out
-            </li>
+            <li class="settings-item" routerLink="/admin/users/details/{{ user?._id }}">Profile</li>
+            <li class="settings-item" routerLink="/">Visit Portfolio</li>
+            <app-separator [inverted]="true"></app-separator>
+            <li class="settings-item" (click)="logoutHandler()">Log out</li>
           </ul>
         </nav>
       </app-dropdown>

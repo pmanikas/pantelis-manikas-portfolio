@@ -1,9 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { faCog, faGift, faHome, faStar, faUser } from "@fortawesome/free-solid-svg-icons";
 import { AlertService } from "src/app/core/services/alert.service";
+import { ApppearanceService } from "src/app/core/services/appearance.service";
 import { AuthService } from "src/app/core/services/auth.service";
 import { MenuItem } from "src/app/shared/models/menu.model";
+import { User } from "src/app/shared/models/user.model";
 
 @Component({
   selector: "app-sidebar",
@@ -11,7 +13,7 @@ import { MenuItem } from "src/app/shared/models/menu.model";
   styleUrls: ["./sidebar.component.scss"]
 })
 
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   public faHome = faHome;;
   public faStart = faStar;
   public faGift = faGift;
@@ -41,11 +43,18 @@ export class SidebarComponent {
     },
   ];
 
+  public user: User | null = null;
+
   constructor(
     private router: Router,
+    private alertService: AlertService,
     public authService: AuthService,
-    private alertService: AlertService
+    public appearanceService: ApppearanceService
   ) {}
+
+  ngOnInit(): void {
+    this.getCurrentUserProfile();
+  }
 
   public logoutHandler():void {
     this.authService.logout();
@@ -53,4 +62,11 @@ export class SidebarComponent {
     this.router.navigate(['/auth/login']);
   }
 
+  private getCurrentUserProfile(): void {
+    this.authService.getCurrentUserProfile().subscribe({
+      next: (user) => {
+        if (user) this.user = user;
+      }
+    });
+  }
 }

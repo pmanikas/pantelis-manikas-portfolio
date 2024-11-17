@@ -31,7 +31,7 @@ export class AuthService {
   private saveSession(data: any): void {
     const session = {
       token: data.token,
-      user: data.user
+      user: ''
     }
     this.localStorageService.save('session', session);
   }
@@ -44,7 +44,9 @@ export class AuthService {
     return !!this.getToken();
   }
 
-  public getCurrentUserProfile(): Observable<User> {
+  public getCurrentUserProfile(): Observable<User | null> {
+    if (!this.isLoggedIn()) return new Observable<null>();
+
     return this.http
       .get(`${USERS_API_URL}profile`)
       .pipe(
