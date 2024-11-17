@@ -85,22 +85,22 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pantelis-manikas-portfolio:build",
-            "port": 1613
+            "port": 1613,
+            "buildTarget": "pantelis-manikas-portfolio:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pantelis-manikas-portfolio:build:production"
+              "buildTarget": "pantelis-manikas-portfolio:build:production"
             },
             "development": {
-              "browserTarget": "pantelis-manikas-portfolio:build:development"
+              "buildTarget": "pantelis-manikas-portfolio:build:development"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pantelis-manikas-portfolio:build"
+            "buildTarget": "pantelis-manikas-portfolio:build"
           }
         },
         "lint": {
