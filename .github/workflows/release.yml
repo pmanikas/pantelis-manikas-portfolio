@@ -35,5 +35,6 @@ jobs:
             cd ..
             cd ..
             sudo sshpass -p "${{ secrets.SSH_PASS }}" scp -v -o StrictHostKeyChecking=no -r app.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/pantelismanikas/pantelismanikas.com
+
     - name: Uncompress new Files
       run : sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'cd public_html/pantelismanikas/pantelismanikas.com && tar -xzvf app.tar.gz && rm app.tar.gz'
