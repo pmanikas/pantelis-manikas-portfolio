@@ -1,5 +1,17 @@
 @use './../abstracts' as *;
 
+:root {
+  --base-spacing: #{$s-m};
+
+  @include desktop {
+    --base-spacing: #{$s-l};
+  }
+
+  @include widescreen {
+    --base-spacing: #{$s-xl};
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

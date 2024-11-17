@@ -3,10 +3,10 @@
 .sidebar-wrapper {
   display: flex;
   flex-direction: column;
-  gap: $s-m;
+  gap: var(--base-spacing);
   background: $c-gradient-dark;
   height: 100%;
-  padding: $s-m;
+  padding: var(--base-spacing);
   color: $c-desert-storm;
 }
 
@@ -23,7 +23,7 @@
 .menu-link {
   display: flex;
   align-items: center;
-  gap: $s-m;
+  gap: var(--base-spacing);
   text-transform: uppercase;
   font-size: 0.75rem;
   margin: 0;
@@ -32,7 +32,7 @@
 .sidebar-footer {
   display: flex;
   flex-direction: column;
-  gap: $s-m;
+  gap: var(--base-spacing);
   margin-top: auto;
 }
 
@@ -64,16 +64,5 @@
   &:hover {
     background: $c-primary;
     color: $c-desert-storm;
-  }
-}
-
-@include desktop {
-  .sidebar-wrapper {
-    padding: $s-l;
-    gap: $s-l;
-  }
-
-  .sidebar-footer {
-    gap: $s-l;
   }
 }

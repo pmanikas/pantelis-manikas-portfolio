@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $s-m;
+  padding: var(--base-spacing);
 }
 
 .title {
@@ -46,9 +46,6 @@
 }
 
 @include desktop {
-  .topbar-wrapper {
-    padding: $s-l;
-  }
 
   .menu-toggle-button {
     display: none;

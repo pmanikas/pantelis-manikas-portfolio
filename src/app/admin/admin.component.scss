@@ -33,6 +33,7 @@
 .admin-main {
   min-height: 100vh;
 
+
   &.frozen {
     height: 100vh;
     overflow: hidden;
@@ -40,7 +41,7 @@
 }
 
 .admin-router {
-  padding: 0 $s-m;
+  padding: var(--base-spacing);
 }
 
 @include desktop {
@@ -56,10 +57,6 @@
     align-self: flex-start;
     width: unset;
     transform: unset;
-  }
-
-  .admin-router {
-    padding: $s-l;
   }
 }
 
