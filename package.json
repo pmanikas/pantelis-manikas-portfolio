@@ -21,11 +21,10 @@
     "@angular/platform-browser": "^18.2.12",
     "@angular/platform-browser-dynamic": "^18.2.12",
     "@angular/router": "^18.2.12",
-    "@fortawesome/angular-fontawesome": "^0.14.1",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "ngx-toastr": "^16.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
@@ -37,6 +36,6 @@
     "@angular/compiler-cli": "^18.2.12",
     "@types/node": "^12.20.37",
     "ts-node": "~8.3.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.5"
   }
 }
