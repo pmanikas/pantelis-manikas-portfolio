@@ -15,7 +15,6 @@ import { ServicesDetailsComponent } from './services/services-details/services-d
 import { ServicesListComponent } from './services/services-list/services-list.component';
 import { UsersDetailsComponent } from './users/users-details/users-details.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
-import { AlertComponent } from './components/alerts/alert.component';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -34,7 +33,6 @@ import { SharedModule } from '../shared/shared.module';
     ServicesListComponent,
     UsersDetailsComponent,
     UsersListComponent,
-    AlertComponent,
     ImageUploadComponent,
     TopbarComponent,
     SidebarComponent,
