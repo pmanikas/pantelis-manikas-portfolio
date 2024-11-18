@@ -1,23 +1,29 @@
-<table *ngIf="services.length" class="table hoverable">
-    <thead>
-        <tr class="text-left">
-            <th>Title</th>
-            <th colspan="2">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="text-left" *ngFor="let service of services">
-            <td>{{ service.title }}</td>
-            <td>
-                <app-button theme="primary" [link]="'/admin/services/details/' + service._id">Edit</app-button>
-            </td>
-            <td>
-                <app-button (click)="deleteHandler(service)" theme="danger">Delete</app-button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<br>
-<div class="flex-end">
-    <app-button theme="black" size="medium" [link]="'/admin/services/details/new'">Add new</app-button>
+<div *ngIf="!isLoading">
+    <div *ngIf="services.length">
+        <table *ngIf="services.length" class="table hoverable">
+            <thead>
+                <tr class="text-left">
+                    <th>Title</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-left" *ngFor="let service of services">
+                    <td>{{ service.title }}</td>
+                    <td>
+                        <app-button theme="primary" [link]="'/admin/services/details/' + service._id">Edit</app-button>
+                    </td>
+                    <td>
+                        <app-button (click)="deleteHandler(service)" theme="danger">Delete</app-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    <div class="flex-end">
+        <app-button theme="black" size="medium" [link]="'/admin/services/details/new'">Add new</app-button>
+    </div>
+
 </div>
+<app-loader *ngIf="isLoading"></app-loader>

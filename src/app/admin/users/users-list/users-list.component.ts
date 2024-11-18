@@ -11,6 +11,7 @@ import { User } from 'src/app/shared/models/user.model';
 
 export class UsersListComponent implements OnInit {
     public users: User[] = [];
+    public isLoading: boolean = false;
 
     constructor(
         private usersService: UsersService,
@@ -22,9 +23,13 @@ export class UsersListComponent implements OnInit {
     }
 
     private getAll(): void {
+        this.isLoading = true;
         this.usersService.getAll()
             .subscribe({
-                next: (users: User[]) => this.users = users
+                next: (users: User[]) => {
+                    this.users = users;
+                    this.isLoading = false;
+                }
             });
     }
 

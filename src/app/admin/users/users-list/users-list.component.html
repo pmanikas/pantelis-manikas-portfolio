@@ -1,31 +1,36 @@
-<table *ngIf="users.length" class="table hoverable">
-    <thead>
-        <tr class="text-left">
-            <th>Avatar</th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th colspan="2">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="text-left" *ngFor="let user of users">
-            <td>
-                <app-avatar [imageUrl]="user.image" size="small"></app-avatar>
-            </td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
-            <td>
-                <app-button theme="primary" [link]="'/admin/users/details/' + user._id">Edit</app-button>
-            </td>
-            <td>
-                <app-button (click)="deleteHandler(user)" theme="danger">Delete</app-button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<br>
-<div class="flex-end">
-    <app-button theme="black" size="medium" [link]="'/admin/users/details/new'">Add new</app-button>
+<div *ngIf="!isLoading">
+    <div *ngIf="users.length">
+        <table class="table hoverable">
+            <thead>
+                <tr class="text-left">
+                    <th>Avatar</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-left" *ngFor="let user of users">
+                    <td>
+                        <app-avatar [imageUrl]="user.image" size="small"></app-avatar>
+                    </td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <app-button theme="primary" [link]="'/admin/users/details/' + user._id">Edit</app-button>
+                    </td>
+                    <td>
+                        <app-button (click)="deleteHandler(user)" theme="danger">Delete</app-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    <div class="flex-end">
+        <app-button theme="black" size="medium" [link]="'/admin/users/details/new'">Add new</app-button>
+    </div>
 </div>
+<app-loader *ngIf="isLoading"></app-loader>
