@@ -39,27 +39,3 @@
     }
 }
 
-@mixin grid-system($columns: 12) {
-    @each $breakpoint, $breakpoint-width in $breakpoints {
-        @media (min-width: $breakpoint-width) {
-            @for $i from 1 through $columns {
-                .col-#{$breakpoint}-#{$i} {
-                    flex: 0 0 #{math.div(100%, $columns) * $i};
-                    max-width: #{math.div(100%, $columns) * $i};
-                }
-            }
-        }
-    }
-
-    @for $i from 1 through $columns {
-        .col-#{$i} {
-            flex: 0 0 #{math.div(100%, $columns) * $i};
-            max-width: #{math.div(100%, $columns) * $i};
-        }
-    }
-
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-}

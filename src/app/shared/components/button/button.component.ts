@@ -12,5 +12,4 @@ export class ButtonComponent {
   @Input() link: string = '';
 
   constructor() {}
-
 }

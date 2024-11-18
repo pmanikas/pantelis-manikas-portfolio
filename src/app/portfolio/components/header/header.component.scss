@@ -11,15 +11,15 @@
   height: $s-header-height;
   background: $c-white;
   border-bottom: 1px solid transparentize($c-black, 0.95);
+
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   &__contact__button {
     display: none;
-    margin: 0;
-    font-size: 0;
   }
 }
 

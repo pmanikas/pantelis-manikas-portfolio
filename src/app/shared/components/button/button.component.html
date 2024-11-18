@@ -1,5 +1,13 @@
-<span>
-  <button [routerLink]="link ? [link] : []" class="button" [ngClass]="['button--' + theme, 'button--' + size]">
-    <ng-content></ng-content>
-  </button>
+<a *ngIf="link" [routerLink]="link">
+    <ng-container [ngTemplateOutlet]="inner"></ng-container>
+</a>
+
+<span *ngIf="!link">
+    <ng-container [ngTemplateOutlet]="inner"></ng-container>
 </span>
+
+<ng-template #inner>
+    <button class="button" [class]="['button--' + theme, 'button--' + size]">
+        <ng-content></ng-content>
+    </button>
+</ng-template>
