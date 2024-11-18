@@ -98,6 +98,30 @@ hr {
     }
 }
 
+.form-group {
+    margin-bottom: $s-m;
+
+    label {
+        display: block;
+        margin-bottom: $s-xs;
+    }
+}
+
+.form-control {
+    width: 100%;
+    padding: $s-m;
+    color: $c-dark;
+    background-color: transparentize($c-dark, 0.9);
+    border: 1px solid transparentize($c-dark, 0.9);
+    border-radius: var(--base-border-radius);
+    box-shadow: var(--base-shadow);
+    transition: border-color 0.3s, background-color 0.3s;
+
+    &:focus {
+        border-color: $c-primary;
+    }
+}
+
 @include tablet {
   .container {
     width: $s-tablet;
