@@ -5,7 +5,7 @@
         <div class="articles__item__image__container">
           <div class="articles__item__image">
             <app-image-resource
-            [src]="article.photo.medium.URL"
+            [src]="article.photo.medium.webpURL || article.photo.medium.URL"
             [alt]="article.photo.alt || article.name"
             width="550"
             height="330"
