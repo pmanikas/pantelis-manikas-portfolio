@@ -1,22 +1,24 @@
 <ng-template #inner>
-  <div *ngIf="title" class="card__header">
-    <h3>{{ title }}</h3>
-  </div>
-  <p class="card__main">
-    <ng-content></ng-content>
-  </p>
-  <div *ngIf="bottomText" class="card__footer">{{ bottomText }}</div>
+    <div class="card" [class]="[theme]">
+        <div *ngIf="title" class="card__header">
+            <h3>{{ title }}</h3>
+        </div>
+        <p class="card__main">
+            <ng-content></ng-content>
+        </p>
+        <div *ngIf="bottomText" class="card__footer">{{ bottomText }}</div>
+    </div>
 </ng-template>
 
-<div *ngIf="!link" class="card" [ngClass]="['card--' + theme]">
-  <ng-container [ngTemplateOutlet]="inner">
-  </ng-container>
+<div *ngIf="!link">
+    <ng-container [ngTemplateOutlet]="inner">
+    </ng-container>
 </div>
-<a *ngIf="link && link.includes('.')" [href]="link" target="_blank" class="card" [ngClass]="['card--' + theme]">
-  <ng-container [ngTemplateOutlet]="inner">
-  </ng-container>
+<a *ngIf="link && link.includes('.')" [href]="link" target="_blank">
+    <ng-container [ngTemplateOutlet]="inner">
+    </ng-container>
 </a>
-<a *ngIf="link && !link.includes('.')" [routerLink]="link" class="card" [ngClass]="['card--' + theme]">
-  <ng-container [ngTemplateOutlet]="inner">
-  </ng-container>
+<a *ngIf="link && !link.includes('.')" [routerLink]="link">
+    <ng-container [ngTemplateOutlet]="inner">
+    </ng-container>
 </a>

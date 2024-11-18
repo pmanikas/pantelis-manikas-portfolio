@@ -1,73 +1,82 @@
-@use './../../../../styles/abstracts' as *;
+@use "./../../../../styles/abstracts" as *;
 
 .card {
-  position: relative;
-  display: block;
-  width: 300px;
-  max-width: 100%;
-  padding: $s-xxl;
-  border-radius: var(--base-border-radius);
-  transition: transform .3s ease-out;
+    position: relative;
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    padding: $s-xxl;
+    border-radius: var(--base-border-radius);
+    transition: transform 0.3s ease-out;
 
-  &__main {
-    font-size: 0.8rem;
-    font-weight: 100;
-  }
+    &__main {
+        font-size: 0.8rem;
+        font-weight: 100;
+    }
 
-  &__footer {
-    font-size: 0.9rem;
-  }
+    &__footer {
+        font-size: 0.9rem;
+    }
 
-  &:hover{
-    transform: scale(1.02) translateY(-$s-xs);
+    &:hover {
+        transform: scale(1.02) translateY(-$s-xs);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &::before,
+    &::after {
+        @include fill;
+        z-index: $z-minus;
+        content: "";
+        border-radius: var(--base-border-radius);
+        transition: opacity 0.3s ease-out;
+    }
+
+    &::before {
+        box-shadow: var(--base-shadow);
+        opacity: 1;
+    }
 
     &::after {
-      opacity: 1;
+        box-shadow: var(--base-shadow-highlight);
+        opacity: 0;
     }
-  }
 
-  &::before, &::after {
-    @include fill;
-    z-index: $z-minus;
-    content: '';
-    border-radius: var(--base-border-radius);
-    transition: opacity .3s ease-out;
-  }
+    // THEMES
+    &.transparent {
+        color: $c-primary;
+    }
 
-  &::before {
-    box-shadow: var(--base-shadow);
-    opacity: 1;
-  }
+    &.primary {
+        color: $c-light;
+        background: $c-primary;
+    }
 
-  &::after {
-    box-shadow: var(--base-shadow-highlight);
-    opacity: 0;
-  }
+    &.secondary {
+        color: $c-light;
+        background: $c-secondary;
+    }
 
-  // TYPES
-  &--transparent {
-    color: $c-primary;
-  }
+    &.primary-faded {
+        color: $c-light;
+        background: $c-primary-faded;
+    }
 
-  &--primary {
-    color: $c-white;
-    background: $c-primary;
-  }
+    &.secondary-faded {
+        color: $c-light;
+        background: $c-primary-faded;
+    }
 
-  &--primary-inverted {
-    color: $c-primary;
-    background: transparent;
-    border: 1px solid currentColor;
-  }
+    &.dark {
+        color: $c-light;
+        background: $c-gradient-dark;
+    }
 
-  &--secondary {
-    color: $c-white;
-    background: $c-secondary;
-  }
-
-  &--secondary-inverted {
-    color: $c-secondary;
-    background: transparent;
-    border: 1px solid currentColor;
-  }
+    &.light {
+        color: $c-dark;
+        background: $c-gradient-light;
+    }
 }
