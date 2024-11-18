@@ -1,0 +1,39 @@
+@use './../../../../styles/abstracts' as *;
+
+.panel {
+    padding: var(--base-spacing);
+    border: 1px solid $c-black;
+    border-radius: $border-radius;
+
+    &.primary {
+        background-color: $c-primary;
+        color: $c-light;
+    }
+
+    &.secondary {
+        background-color: $c-secondary;
+        color: $c-light;
+    }
+
+    &.primary-inverted {
+        background-color: $c-light;
+        color: $c-primary;
+        border-color: $c-primary;
+    }
+
+    &.secondary-inverted {
+        background-color: $c-light;
+        color: $c-secondary;
+        border-color: $c-secondary;
+    }
+
+    &.dark {
+        background-color: $c-dark;
+        color: $c-light;
+    }
+
+    &.light {
+        background-color: $c-light;
+        color: $c-dark;
+    }
+}

@@ -13,6 +13,7 @@ import { IconComponent } from './components/icon/icon.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 @NgModule({
   imports: [
@@ -21,19 +22,8 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     RouterModule
   ],
   declarations: [
-    ButtonComponent,
-    ImageResourceComponent,
-    CardComponent,
-    LoaderComponent,
-    LogoComponent,
-    SeparatorComponent,
-    IconComponent,
-    DropdownComponent,
     DeferLoadDirective,
     ClickOutsideDirective,
-    AvatarComponent
-  ],
-  exports: [
     ButtonComponent,
     ImageResourceComponent,
     CardComponent,
@@ -43,8 +33,21 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     IconComponent,
     DropdownComponent,
     AvatarComponent,
+    PanelComponent
+  ],
+  exports: [
     DeferLoadDirective,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    ButtonComponent,
+    ImageResourceComponent,
+    CardComponent,
+    LoaderComponent,
+    LogoComponent,
+    SeparatorComponent,
+    IconComponent,
+    DropdownComponent,
+    AvatarComponent,
+    PanelComponent
   ]
 })
 export class SharedModule { }

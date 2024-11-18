@@ -63,7 +63,7 @@
   padding: $s-s $s-m;
   color: $c-steel-gray;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: var(--base-border-radius);
 
   &:hover {
     background: $c-primary;

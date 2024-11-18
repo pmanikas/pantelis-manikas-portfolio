@@ -6,7 +6,7 @@
     text-align: center;
     background: transparent;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--base-border-radius);
     outline: none;
     box-sizing: border-box;
     transition: transform 0.3s ease;
@@ -26,27 +26,23 @@
         transform: scale(0.95);
     }
 
-    &::before {
+    &::before, &::after {
         @include fill;
+        z-index: $z-minus;
+        content: '';
+        border-radius: var(--base-border-radius);
+        transition: opacity .3s ease-out;
+      }
 
-        content: "";
-        border-radius: 4px;
-        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 10%),
-            0 1px 2px rgb(28 35 139 / 10%), 0 2px 5px rgb(41 52 204 / 20%);
-        transition: opacity 0.3s ease;
+      &::before {
+        box-shadow: var(--base-shadow);
         opacity: 1;
-    }
+      }
 
-    &::after {
-        @include fill;
-
-        content: "";
-        border-radius: 4px;
-        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 10%), 0 2px 6px rgb(0 0 0 / 5%),
-            0 7px 14px rgb(28 35 139 / 15%);
-        transition: opacity 0.3s ease;
+      &::after {
+        box-shadow: var(--base-shadow-highlight);
         opacity: 0;
-    }
+      }
 
     // THEME
     &--transparent {

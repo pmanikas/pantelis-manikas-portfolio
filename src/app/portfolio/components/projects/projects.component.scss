@@ -17,7 +17,7 @@
     margin-bottom: $s-m;
     overflow: hidden;
     font-size: 0;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%);
+    border-radius: var(--base-border-radius);
+    box-shadow: var(--base-shadow-highlight);
   }
 }

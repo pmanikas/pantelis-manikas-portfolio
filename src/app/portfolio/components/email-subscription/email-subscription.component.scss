@@ -10,9 +10,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        box-shadow: 0 0 1px rgb(0 0 0 / 5%), 0 1px 2px rgb(0 0 0 / 5%),
-            0 4px 8px rgb(0 0 0 / 8%);
-        border-radius: 6px;
+        box-shadow: var(--base-shadow-highlight);
+        border-radius: var(--base-border-radius);
         overflow: hidden;
     }
 

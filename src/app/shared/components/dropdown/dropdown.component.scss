@@ -1,71 +1,63 @@
-@use './../../../../styles/abstracts' as *;
+@use "./../../../../styles/abstracts" as *;
+
 .dropdown-container {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .trigger {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .dropdown-content {
-  position: fixed;
-  min-width: 200px;
-  background: white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-              0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border-radius: 6px;
-  margin-top: 8px;
-  z-index: 1000;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 150ms ease-in-out,
-              transform 150ms ease-in-out;
-  visibility: hidden;
-  /* Prevent content from causing horizontal scrolling */
-  max-width: calc(100vw - 24px);
-  overflow-x: hidden;
-  /* Allow vertical scrolling if content is too tall */
-  max-height: calc(100vh - 96px);
-  overflow-y: auto;
+    position: fixed;
+    z-index: 1000;
+    min-width: 200px;
+    max-width: calc(100vw - $s-xxl);
+    max-height: calc(100vh - $s-xxxl);
+    margin-top: $s-m;
+    background: $c-light;
+    box-shadow: var(--base-shadow);
+    border-radius: var(--base-border-radius);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .dropdown-content.open {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .dropdown-content-top {
-  margin-top: 0;
-  margin-bottom: 8px;
-  transform: translateY(10px);
+    margin-top: 0;
+    margin-bottom: $s-m;
+    transform: translateY($s-s);
 }
 
 .dropdown-content-top.open {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
-/* Add a subtle border and background for better visibility */
 .dropdown-content {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom,
-              rgba(255, 255, 255, 1) 0%,
-              rgba(255, 255, 255, 0.98) 100%);
+    border: 1px solid transparentize($c-dark, 0.9);
 }
 
-/* Add smooth scrollbar for webkit browsers */
 .dropdown-content::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 .dropdown-content::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .dropdown-content::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
+    background-color: transparentize($c-dark, 0.8);
+    border-radius: var(--base-border-radius);
+    border: 2px solid transparent;
+    background-clip: padding-box;
 }

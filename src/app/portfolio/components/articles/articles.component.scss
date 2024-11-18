@@ -16,8 +16,8 @@
     margin-bottom: $s-m;
     overflow: hidden;
     font-size: 0;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgb(0 0 0 / 15%), 0 10px 20px rgb(0 0 0 / 15%);
+    border-radius: var(--base-border-radius);
+    box-shadow: var(--base-shadow-highlight);
   }
   &__item__image {
     transition: transform .3s ease-in-out;
