@@ -1,57 +1,65 @@
-@use 'sizes' as *;
+@use "sizes" as *;
+@use "sass:math";
 
 @mixin center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @mixin fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @mixin square($size) {
-  width: $size;
-  height: $size;
-}
-
-@mixin mobileOnly {
-  @media (max-width: $s-tablet) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (min-width: $s-large-mobile) {
-    @content;
-  }
+    width: $size;
+    height: $size;
 }
 
 @mixin tablet {
-  @media (min-width: $s-tablet) {
-    @content;
-  }
+    @media (min-width: $s-tablet) {
+        @content;
+    }
 }
 
 @mixin desktop {
-  @media (min-width: $s-desktop) {
-    @content;
-  }
+    @media (min-width: $s-desktop) {
+        @content;
+    }
 }
 
 @mixin widescreen {
-  @media (min-width: $s-widescreen) {
-    @content;
-  }
+    @media (min-width: $s-widescreen) {
+        @content;
+    }
 }
 
-@mixin largescreen {
-  @media (min-width: $s-largescreen) {
-    @content;
-  }
+@mixin grid-system($columns: 12) {
+    @each $breakpoint, $breakpoint-width in $breakpoints {
+        @media (min-width: $breakpoint-width) {
+            @for $i from 1 through $columns {
+                .col-#{$breakpoint}-#{$i} {
+                    flex: 0 0 #{math.div(100%, $columns) * $i};
+                    max-width: #{math.div(100%, $columns) * $i};
+                }
+            }
+        }
+    }
+
+    @for $i from 1 through $columns {
+        .col-#{$i} {
+            flex: 0 0 #{math.div(100%, $columns) * $i};
+            max-width: #{math.div(100%, $columns) * $i};
+        }
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
