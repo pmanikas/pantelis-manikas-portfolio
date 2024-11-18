@@ -1,76 +1,69 @@
 <section>
-  <div class="container">
-    <app-hero></app-hero>
-  </div>
+    <div class="container">
+        <app-hero></app-hero>
+    </div>
 </section>
 <hr />
 <section class="services">
-  <div class="container">
-    <div class="services__intro">
-      <div class="services__intro__details">
-        <div class="subtitle--m">How I work</div>
-        <h2>Development Process</h2>
-        <p>
-          Reach your business goals with the most updated web practices. Let’s
-          start working on your awesome Web App.
-        </p>
-      </div>
-      <div class="services__buttons">
-        <app-button class="services__button" size="medium" theme="primary"
-          >Start a project</app-button
-        >
-        <app-button
-          class="services__button"
-          size="medium"
-          theme="primary--inverted"
-          >Learn more</app-button
-        >
-      </div>
+    <div class="container">
+        <div class="services__intro">
+            <div class="services__intro__details">
+                <div class="subtitle--m">How I work</div>
+                <h2>Development Process</h2>
+                <p>
+                    Reach your business goals with the most updated web practices. Let’s
+                    start working on your awesome Web App.
+                </p>
+            </div>
+            <div class="services__buttons">
+                <a href="https://form.typeform.com/to/ilyOOjYU">
+                    <app-button class="services__button" size="medium" theme="primary">Start a project</app-button>
+                </a>
+                <a href="https://form.typeform.com/to/mmeru3BU">
+                    <app-button class="services__button" size="medium" theme="primary--inverted">Learn more</app-button>
+                </a>
+            </div>
+        </div>
+        <app-services *ngIf="!areServicesLoading && services.length" [services]="services"></app-services>
     </div>
-    <app-services *ngIf="!areServicesLoading && services.length" [services]="services"></app-services>
-  </div>
-  <app-loader *ngIf="areServicesLoading"></app-loader>
+    <app-loader *ngIf="areServicesLoading"></app-loader>
 </section>
 <hr />
 <section class="projects">
-  <div class="container" *ngIf="!areProjectsLoading && projects.length">
-    <div class="subtitle--m">Recent Cases</div>
-    <h2>Projects</h2>
-    <app-projects [projects]="projects"></app-projects>
-    <div class="text--center">
-      <br />
-      <app-button size="large" theme="primary" link="/projects"
-        >Discover more</app-button
-      >
+    <div class="container" *ngIf="!areProjectsLoading && projects.length">
+        <div class="subtitle--m">Recent Cases</div>
+        <h2>Projects</h2>
+        <app-projects [projects]="projects"></app-projects>
+        <br />
+        <div class="flex-center">
+            <app-button size="large" theme="primary" link="/projects">Discover more</app-button>
+        </div>
     </div>
-  </div>
-  <app-loader *ngIf="areProjectsLoading"></app-loader>
+    <app-loader *ngIf="areProjectsLoading"></app-loader>
 </section>
 <hr />
 <section clall="home__blog">
-  <div class="container" *ngIf="!areArticlesLoading && articles.length">
-    <div class="subtitle--m">Retroing is life</div>
-    <h2>My Nerdy Blog</h2>
-    <app-articles [articles]="articles"></app-articles>
-    <div class="text--center">
-      <br />
-      <app-button link="/blog" theme="secondary" size="large"
-        >Geek More</app-button
-      >
+    <div class="container" *ngIf="!areArticlesLoading && articles.length">
+        <div class="subtitle--m">Retroing is life</div>
+        <h2>My Nerdy Blog</h2>
+        <app-articles [articles]="articles"></app-articles>
+        <br />
+        <div class="flex-center">
+            <app-button link="/blog" theme="secondary" size="large">Geek More</app-button>
+        </div>
     </div>
-  </div>
-  <app-loader *ngIf="areArticlesLoading"></app-loader>
+    <app-loader *ngIf="areArticlesLoading"></app-loader>
 </section>
 <hr />
 <section class="subscribtion">
-  <div class="container">
-    <div class="subtitle--m">Stay Updated</div>
-    <h2>Discover how I work</h2>
-    <p>
-      Get behind the scenes and have a look at my dev process. Sign up to stay
-      informed about the latest case studies and get unlimited access to my dev
-      resources.
-    </p>
-    <app-email-subscription></app-email-subscription>
-  </div>
+    <div class="container">
+        <div class="subtitle--m">Stay Updated</div>
+        <h2>Discover how I work</h2>
+        <p>
+            Get behind the scenes and have a look at my dev process. Sign up to stay
+            informed about the latest case studies and get unlimited access to my dev
+            resources.
+        </p>
+        <app-email-subscription></app-email-subscription>
+    </div>
 </section>

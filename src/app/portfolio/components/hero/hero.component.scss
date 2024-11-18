@@ -1,66 +1,78 @@
-@use './../../../../styles/abstracts' as *;
+@use "./../../../../styles/abstracts" as *;
 
 $image-size: 300px;
 
 .hero {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: space-between;
-  &__header {
-    font-size: 4rem;
-  }
-  &__details {
-    max-width: 520px;
-    flex-basis: 50%;
-  }
-  &__description {
-    font-size: 1.2rem;
-    font-weight: 100;
-  }
-  &__collage {
     display: flex;
-    justify-content: center;
-    flex-basis: 50%;
-  }
-  &__image__container {
-    position: relative;
-    margin-bottom: $s-xxl;
-    &::before, &::after {
-      @include fill;
-      content: '';
-      z-index: $z-minus;
-      border-radius: 4px;
-      opacity: 0.8;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+
+    &__header {
+        font-size: 4rem;
     }
-    &::before {
-      top: -$s-l;
-      left: -$s-l;
-      background: $c-secondary;
-      box-shadow: -1px -1px 8px $c-secondary;
+
+    &__details {
+        max-width: 520px;
+        flex-basis: 50%;
     }
-    &::after {
-      top: $s-l;
-      left: $s-l;
-      background: $c-primary;
-      box-shadow: 1px 1px 8px $c-primary;
+
+    &__description {
+        font-size: 1.2rem;
+        font-weight: 100;
     }
-  }
-  &__image{
-    display: block;
-    border-radius: 6px;
-    overflow: hidden;
-    filter: grayscale(1);
-    opacity: 0.9;
-  }
+
+    &__collage {
+        display: flex;
+        justify-content: center;
+        flex-basis: 50%;
+    }
+
+    &__image__container {
+        position: relative;
+        margin-bottom: $s-xxl;
+
+        &::before,
+        &::after {
+            @include fill;
+
+            content: "";
+            z-index: $z-minus;
+            border-radius: 4px;
+            opacity: 0.8;
+        }
+
+        &::before {
+            top: -$s-l;
+            left: -$s-l;
+            background: $c-secondary;
+            box-shadow: -1px -1px 8px $c-secondary;
+        }
+
+        &::after {
+            top: $s-l;
+            left: $s-l;
+            background: $c-primary;
+            box-shadow: 1px 1px 8px $c-primary;
+        }
+    }
+
+    &__image {
+        display: block;
+        border-radius: 6px;
+        overflow: hidden;
+        filter: grayscale(1);
+        opacity: 0.9;
+    }
 }
 
 @include desktop {
-  .hero {
-    flex-direction: row;
-    &__image__container {
-      position: relative;
-      margin-bottom: 0;
+    .hero {
+        flex-direction: row;
+
+        &__image__container {
+            position: relative;
+            margin-bottom: 0;
+        }
     }
-  }
 }

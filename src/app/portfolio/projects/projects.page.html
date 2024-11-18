@@ -12,11 +12,13 @@
       <app-projects [projects]="projects"></app-projects>
     </div>
     <app-loader *ngIf="isLoading"></app-loader>
-    <a href="https://github.com/pmanikas" target="_blank" class="text--center projects__button">
-      <app-button theme="black" size="large">
-        My Github &nbsp;
-        <fa-icon [icon]="faGithub" class="social__icon"></fa-icon>
-      </app-button>
-    </a>
+    <div class="flex-center">
+        <a href="https://github.com/pmanikas" target="_blank" class="text--center projects__button">
+          <app-button theme="black" size="large">
+            Visit my Github &nbsp;
+            <fa-icon [icon]="faGithub" class="social__icon"></fa-icon>
+          </app-button>
+        </a>
+    </div>
   </div>
 </section>

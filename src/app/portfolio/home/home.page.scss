@@ -1,43 +1,47 @@
-@use './../../../styles/abstracts' as *;
+@use "./../../../styles/abstracts" as *;
 
 .services {
-  &__intro {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: $s-xxxl;
-  }
-  &__intro__details {
-    flex-basis: 60%;
-    h2 {
-      margin-bottom: $s-m;
-    }
-    p {
-      font-weight: 100;
-    }
-  }
-  &__buttons {
-    display: flex;
-  }
-}
 
-.services__button~.services__button {
-  margin-left: $s-xl;
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $s-xxxl;
+    }
+
+    &__intro__details {
+        flex-basis: 60%;
+
+        h2 {
+            margin-bottom: $s-m;
+        }
+
+        p {
+            font-weight: 100;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: var(--base-spacing);
+    }
 }
 
 .subscribtion {
-  text-align: center;
+    text-align: center;
 }
 
 @include tablet {
-  .services {
-    &__intro {
-      flex-direction: row;
-      align-items: center;
+    .services {
+
+        &__intro {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
     }
-    &__buttons {
-      display: flex;
-      flex-basis: 40%;
-      justify-content: flex-end;
-    }
-  }
 }
