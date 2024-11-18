@@ -20,6 +20,37 @@
   gap: $s-xl;
 }
 
+.menu-item {
+    --indicator-size: 0.5rem;
+
+    position: relative;
+
+    &::after {
+        content: '';
+        border-top: var(--indicator-size) solid transparent;
+        border-bottom: var(--indicator-size) solid transparent;
+        border-right: var(--indicator-size) solid $c-quill-gray;
+        position: absolute;
+        right: calc(var(--base-spacing) * -1);
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    &.active {
+        color: $c-primary-faded;
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &:hover {
+        color: $c-primary;
+    }
+}
+
 .menu-link {
   display: flex;
   align-items: center;
