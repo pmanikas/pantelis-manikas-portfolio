@@ -50,15 +50,15 @@ export class HomePage implements OnInit {
 
   private getAllProjects(): void {
     this.projectsService.getAll()
-      .subscribe(
-        (projects: Project[]) => {
+      .subscribe({
+        next: (projects: Project[]) => {
           this.projects = projects.slice(0, 4);
           this.areProjectsLoading = false;
         },
-        (_error) => {
+        error: (_error) => {
           this.areProjectsLoading = false;
         }
-      );
+      });
   }
 
   private getAllArticles(): void {
