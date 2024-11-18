@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
 
-  public imageUrl: string = '/assets/images/pantelis-manikas-black-and-white.jpg';
+  public imageUrl: string = '/assets/images/pantelis-manikas-black-and-white.webp';
 
   constructor() { }
 
