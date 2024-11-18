@@ -3,11 +3,16 @@
 .panel {
     position: relative;
     padding: var(--base-spacing);
-    border: 1px solid $c-black;
     border-radius: var(--base-border-radius);
     box-shadow: var(--base-shadow-highlight);
 
     // THEMES
+    &.transparent {
+        color: $c-dark;
+        background-color: transparent;
+        border: 1px solid $c-black;
+    }
+
     &.primary {
         background-color: $c-primary;
         color: $c-light;
@@ -34,7 +39,7 @@
     }
 
     &.light {
-        background: $c-gradient-light;
+        background: $c-light;
         color: $c-dark;
     }
 }

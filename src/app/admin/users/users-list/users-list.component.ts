@@ -4,43 +4,43 @@ import { UsersService } from 'src/app/core/services/users.service';
 import { User } from 'src/app/shared/models/user.model';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.scss']
+    selector: 'app-users',
+    templateUrl: './users-list.component.html',
+    styleUrls: ['./users-list.component.scss']
 })
 
 export class UsersListComponent implements OnInit {
+    public users: User[] = [];
 
-  public users: User[] = [];
+    constructor(
+        private usersService: UsersService,
+        private alertService: AlertService
+    ) { }
 
-  constructor(
-    private usersService: UsersService,
-    private alertService: AlertService
-  ) { }
+    ngOnInit(): void {
+        this.getAll();
+    }
 
-  ngOnInit(): void {
-    this.getAll()
-  }
+    private getAll(): void {
+        this.usersService.getAll()
+            .subscribe({
+                next: (users: User[]) => this.users = users
+            });
+    }
 
-  private getAll():void {
-    this.usersService.getAll()
-      .subscribe(users => {
+    public deleteHandler(user: User): void {
+        if (!confirm(`Are you sure you want to remove user ${user.username}?`)) return;
+        this.usersService.remove(user._id)
+            .subscribe({
+                next: () => {
+                    this.deleteLocally(user._id);
+                    this.alertService.success(`User ${user.username} has been successfully removed`);
+                }
+            });
+    }
+
+    private deleteLocally(id: any): void {
+        const users = this.users.filter(user => user._id !== id);
         this.users = users;
-      })
-  }
-
-  public deleteHandler(user: User):void {
-    if(!confirm(`Are you sure you want to remove user ${user.username}?`)) return;
-    this.usersService.remove(user._id)
-      .subscribe((_res: any) => {
-        this.deleteLocally(user._id);
-        this.alertService.success(`User ${user.username} has been successfully removed`);
-      })
-  }
-
-  private deleteLocally(id: any): void {
-    const users = this.users.filter(user => user._id !== id);
-    this.users = users;
-  }
-
+    }
 }

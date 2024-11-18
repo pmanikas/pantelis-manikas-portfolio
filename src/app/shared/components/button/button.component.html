@@ -7,7 +7,7 @@
 </span>
 
 <ng-template #inner>
-    <button class="button" [class]="['button--' + theme, 'button--' + size]">
+    <button class="button" [class]="[theme, size]">
         <ng-content></ng-content>
     </button>
 </ng-template>

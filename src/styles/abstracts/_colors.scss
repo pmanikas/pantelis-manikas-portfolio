@@ -7,21 +7,30 @@ $c-black: #000000;
 $c-shark-black: #1e1e24;
 $c-steel-gray: #1e1e2f;
 
-
 $c-blue-ribbon: #3340FF;
 $c-azure-radiance: #0087fe;
-$c-bright-turquoise: #00E9D0;
-$c-green: #16fa29;
 $c-radical-red: #FF3366;
 $c-french-rose: #EA4C89;
 
+$c-tamarillo-red: #A6192E;
+$c-peel-orange: #FF9900;
+$c-haze-green: #04b34f;
+$c-endeavour-blue: #0057B8;
+
 // Theme
 $c-dark: $c-shark-black;
+$c-dark-faded: $c-steel-gray;
 $c-light: $c-desert-storm;
 $c-primary: $c-blue-ribbon;
 $c-primary-faded: $c-azure-radiance;
 $c-secondary: $c-radical-red;
 $c-secondary-faded: $c-french-rose;
+
+// Utility - Status
+$c-success: $c-haze-green;
+$c-danger: $c-tamarillo-red;
+$c-warning: $c-peel-orange;
+$c-info: $c-endeavour-blue;
 
 // Elements
 $c-faded-text: transparentize($c-black, 0.2);

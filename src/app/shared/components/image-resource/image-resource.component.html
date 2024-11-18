@@ -1,3 +1,3 @@
 <div class="image__wrap" (deferLoad)="displayImage()">
-  <img class="image__resource" [ngClass]="[showImage ? 'image__resource--active' : '']" [src]="showImage || !lazy ? src : ''" [alt]="alt" [width]="width" [height]="height">
+  <img class="image__resource" [ngClass]="[showImage ? 'image__resource--active' : '']" [src]="showImage || !lazy ? src : ''" [alt]="alt" [width]="width" [height]="height" [style.maxWidth]="width+'px'">
 </div>

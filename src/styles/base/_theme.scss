@@ -56,6 +56,48 @@ hr {
   color: $c-secondary;
 }
 
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-collapse: inherit;
+    border-spacing: 0 $s-s;
+
+    th {
+        padding: $s-m;
+    }
+
+    td {
+        padding: $s-m;
+
+        &:first-child {
+            border-top-left-radius: var(--base-border-radius);
+            border-bottom-left-radius: var(--base-border-radius);
+        }
+
+        &:last-child {
+            border-top-right-radius: var(--base-border-radius);
+            border-bottom-right-radius: var(--base-border-radius);
+        }
+    }
+
+    &.hoverable {
+        tbody tr {
+            overflow: hidden;
+
+            &:hover {
+                background-color: transparentize($c-dark, 0.9);
+            }
+        }
+    }
+
+    &.striped {
+        tbody tr:nth-child(odd) {
+            background-color: transparentize($c-dark, 0.9);
+        }
+    }
+}
+
 @include tablet {
   .container {
     width: $s-tablet;
@@ -81,3 +123,4 @@ hr {
     padding-bottom: $s-xxxl;
   }
 }
+

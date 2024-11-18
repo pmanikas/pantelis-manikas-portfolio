@@ -1,31 +1,29 @@
-<div class="list__add__button">
-  <a [routerLink]="['/admin/projects/details/new']"
-  ><app-button class="list__button btn btn-success">Add Project</app-button></a
->
-</div>
-
-<div class="projects">
-  <div *ngFor="let project of projects">
-    <app-card>
-      <div>
-        <img
-          [src]="project.image"
-          (alt)="(project.title)"
-          class="item-image"
-        />
-        &nbsp;
-        {{ project.title }}
-      </div>
-      <div>
-        <app-button
-          (click)="deleteHandler(project)"
-          >DELETE</app-button
-        >
-        &nbsp;
-        <a [routerLink]="['/admin/projects/details/' + project._id]"
-          ><app-button class="btn">EDIT</app-button></a
-        >
-      </div>
-    </app-card>
-  </div>
+<table *ngIf="projects.length" class="table hoverable">
+    <thead>
+        <tr class="text-left">
+            <th>Image</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-left" *ngFor="let project of projects">
+            <td>
+                <app-avatar [imageUrl]="project.image" size="large"></app-avatar>
+            </td>
+            <td>{{ project.title }}</td>
+            <td>{{ project.type }}</td>
+            <td>
+                <app-button theme="primary" [link]="'/admin/projects/details/' + project._id">Edit</app-button>
+            </td>
+            <td>
+                <app-button (click)="deleteHandler(project)" theme="danger">Delete</app-button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div class="flex-end">
+    <app-button theme="black" size="medium" [link]="'/admin/projects/details/new'">Add new</app-button>
 </div>

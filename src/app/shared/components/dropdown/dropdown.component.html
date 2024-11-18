@@ -5,8 +5,6 @@
 
     <div class="dropdown-content" [class.open]="isOpen" [style.top.px]="dropdownTop" [style.left.px]="dropdownLeft"
         [style.right.px]="dropdownRight" [class.dropdown-content-top]="openUpward" #contentEl>
-        <app-panel theme="light">
-            <ng-content select="[dropdownContent]"></ng-content>
-        </app-panel>
+        <ng-content select="[dropdownContent]"></ng-content>
     </div>
 </div>

@@ -10,6 +10,7 @@
   object-fit: cover;
   opacity: 0;
   transition: opacity .5s ease-in-out;
+
   &--active {
     opacity: 1;
   }

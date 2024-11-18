@@ -45,47 +45,67 @@
       }
 
     // THEME
-    &--transparent {
+    &.transparent {
         color: $c-primary;
     }
 
-    &--black {
+    &.black {
         color: $c-white;
         background: $c-black;
     }
 
-    &--primary {
+    &.primary {
         color: $c-white;
         background: $c-primary;
     }
 
-    &--primary--inverted {
+    &.primary-inverted {
         color: $c-primary;
         background: transparent;
     }
 
-    &--secondary {
+    &.secondary {
         color: $c-black;
         background: $c-secondary;
     }
 
-    &--secondary--inverted {
+    &.secondary-inverted {
         color: $c-secondary;
         background: transparent;
     }
 
+    &.success {
+        color: $c-white;
+        background: $c-success;
+    }
+
+    &.danger {
+        color: $c-white;
+        background: $c-danger;
+    }
+
+    &.warning {
+        color: $c-white;
+        background: $c-warning;
+    }
+
+    &.info {
+        color: $c-white;
+        background: $c-info;
+    }
+
     // SIZES
-    &--small {
+    &.small {
         padding: $s-xs $s-l;
         font-size: 0.6rem;
     }
 
-    &--medium {
+    &.medium {
         padding: $s-m $s-xl;
         font-size: 0.7rem;
     }
 
-    &--large {
+    &.large {
         padding: $s-m $s-xl;
         font-size: 0.85rem;
     }

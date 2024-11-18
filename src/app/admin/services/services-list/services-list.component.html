@@ -1,27 +1,23 @@
-<div class="list__add__button">
-  <a [routerLink]="['/admin/services/details/new']"
-  ><button class="list__button btn btn-success">Add <span class="list__button__model" *ngIf="services && services.length"> &nbsp;{{ services[0]['_model'] }}</span></button></a
->
+<table *ngIf="services.length" class="table hoverable">
+    <thead>
+        <tr class="text-left">
+            <th>Title</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-left" *ngFor="let service of services">
+            <td>{{ service.title }}</td>
+            <td>
+                <app-button theme="primary" [link]="'/admin/services/details/' + service._id">Edit</app-button>
+            </td>
+            <td>
+                <app-button (click)="deleteHandler(service)" theme="danger">Delete</app-button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div class="flex-end">
+    <app-button theme="black" size="medium" [link]="'/admin/services/details/new'">Add new</app-button>
 </div>
-
-<ul class="list-group list">
-  <li
-    *ngFor="let service of services"
-    class="list-group-item list__item"
-  >
-    <div>
-      {{ service.title }}
-    </div>
-    <div>
-      <button
-        class="btn btn-danger"
-        (click)="deleteHandler(service)"
-        >DELETE</button
-      >
-      &nbsp;
-      <a [routerLink]="['/admin/services/details/' + service._id]"
-        ><button class="btn">EDIT</button></a
-      >
-    </div>
-  </li>
-</ul>
