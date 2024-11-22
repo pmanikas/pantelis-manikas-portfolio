@@ -1,7 +1,6 @@
-
-    <div class="control-container">
-        <img [src]="src" *ngIf="src" class="image-preview"/>
-        <input type="file" accept='image/*' (change)="onChange($event)" class="form-control" />
-        <div *ngIf="dragState === DRAG_STATE.ON" class="can-drop-info">Drop image here</div>
-        <div *ngIf="dragState !== DRAG_STATE.ON && !src" class="instructions-info">Click or Drag & Drop</div>
-    </div>
+<div class="control-container">
+    <img [src]="src" *ngIf="src" class="image-preview" />
+    <input type="file" accept='image/*' (change)="onChange($event)" class="form-control" />
+    <div *ngIf="dragState === DRAG_STATE.ON" class="can-drop-info">Drop image here</div>
+    <div *ngIf="dragState !== DRAG_STATE.ON && !src" class="instructions-info">Click or Drag & Drop</div>
+</div>

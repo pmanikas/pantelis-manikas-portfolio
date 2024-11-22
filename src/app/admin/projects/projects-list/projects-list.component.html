@@ -4,8 +4,10 @@
             <thead>
                 <tr class="text-left">
                     <th>Image</th>
+                    <th>Order</th>
                     <th>Title</th>
                     <th>Type</th>
+                    <th>Modified Date</th>
                     <th colspan="2">Actions</th>
                 </tr>
             </thead>
@@ -14,8 +16,10 @@
                     <td>
                         <app-avatar [imageUrl]="project.image" size="large"></app-avatar>
                     </td>
+                    <td>{{ project.order }}</td>
                     <td>{{ project.title }}</td>
                     <td>{{ project.type }}</td>
+                    <td>{{ project.modified_date | date: 'dd/MM/yyyy hh:mm' }}</td>
                     <td>
                         <app-button theme="primary" [link]="'/admin/projects/details/' + project._id">Edit</app-button>
                     </td>

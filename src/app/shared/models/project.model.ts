@@ -5,6 +5,9 @@ export class Project {
   url: string;
   image: string;
   description: string;
+  created_date?: Date;
+  modified_date?: Date;
+  order?: number;
   _model?: string;
 
   constructor() {
