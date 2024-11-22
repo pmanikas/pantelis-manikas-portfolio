@@ -19,6 +19,7 @@ import { ImageUploadComponent } from './components/image-upload/image-upload.com
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SharedModule } from '../shared/shared.module';
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    DragDropModule
   ]
 })
 export class AdminModule { }

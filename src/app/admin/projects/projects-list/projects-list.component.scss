@@ -1,11 +1,29 @@
-@use './../../../../styles/abstracts' as *;
+@use "./../../../../styles/abstracts" as *;
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: $s-l;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: $s-l;
 }
 
 .item-image {
-  max-width: 100%;
+    max-width: 100%;
+}
+
+.cdk-drag-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc(var(--base-spacing) / 2);
+    border: 1px solid $c-dark;
+    border-radius: var(--base-border-radius);
+    background-color: $c-white;
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }

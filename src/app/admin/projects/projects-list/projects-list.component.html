@@ -3,6 +3,7 @@
         <table *ngIf="projects.length" class="table hoverable">
             <thead>
                 <tr class="text-left">
+                    <th></th>
                     <th>Image</th>
                     <th>Order</th>
                     <th>Title</th>
@@ -11,8 +12,13 @@
                     <th colspan="2">Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="text-left" *ngFor="let project of projects">
+            <tbody cdkDropList (cdkDropListDropped)="drop($event)">
+                <tr cdkDrag class="text-left" *ngFor="let project of projects">
+                    <td>
+                        <div cdkDragHandle class="drag-handle">
+                            <app-icon [icon]="faGrip"></app-icon>
+                        </div>
+                    </td>
                     <td>
                         <app-avatar [imageUrl]="project.image" size="large"></app-avatar>
                     </td>
