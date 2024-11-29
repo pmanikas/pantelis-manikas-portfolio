@@ -1,25 +1,25 @@
-@use './../../../../styles/abstracts' as *;
+@use "./../../../../styles/abstracts" as *;
 
 .projects {
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-gap: $s-xxl;
-  }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        grid-gap: $s-xxl;
+    }
 
-  &__item__description {
-    margin-bottom: 0;
-    font-size: 0.8rem;
-    color: transparentize($c-black, 0.4);
-  }
+    &__item__description {
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        color: transparentize($c-black, 0.4);
+    }
 
-  &__item__image__container {
-    margin-bottom: $s-m;
-    overflow: hidden;
-    font-size: 0;
-    border-radius: var(--base-border-radius);
-    box-shadow: var(--base-shadow-highlight);
-  }
+    &__item__image__container {
+        margin-bottom: $s-m;
+        overflow: hidden;
+        font-size: 0;
+        border-radius: var(--base-border-radius);
+        box-shadow: var(--base-shadow-highlight);
+    }
 }
 
 .project-types {
