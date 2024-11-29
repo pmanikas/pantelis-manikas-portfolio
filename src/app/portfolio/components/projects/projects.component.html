@@ -1,19 +1,27 @@
 <div class="projects">
-  <div class="projects__grid">
-    <div *ngFor="let project of projects" class="projects__item">
-      <a rel="noopener" [href]="project.url" target="_blank">
-        <div class="projects__item__image__container">
-          <app-image-resource
-            [src]="project.image"
-            [alt]="project.title"
-            [width]="'323'"
-            [height]="'323'"
-          ></app-image-resource>
+    <div class="project-types" *ngIf="shouldFilterByType">
+        <div>
+            <app-button (click)="filterByType('')" [theme]="selectedType === '' ? 'primary' : 'primary--inverted'">All</app-button>
         </div>
-        <p class="subtitle--s">{{ project.type }}</p>
-        <h3 class="projects__item__title">{{ project.title }}</h3>
-        <!-- <p class="projects__item__description">{{ project.description }}</p> -->
-      </a>
+        <div *ngFor="let type of types">
+            <app-button class="button--secondary"
+                [theme]="type === selectedType ? 'primary' : 'primary--inverted'"
+                (click)="filterByType(type)">
+                {{ type }}
+            </app-button>
+        </div>
     </div>
-  </div>
+    <div class="projects__grid">
+        <div *ngFor="let project of filteredProjects" class="projects__item">
+            <a rel="noopener" [href]="project.url" target="_blank">
+                <div class="projects__item__image__container">
+                    <app-image-resource [src]="project.image" [alt]="project.title" [width]="'323'"
+                        [height]="'323'"></app-image-resource>
+                </div>
+                <p class="subtitle--s">{{ project.type }}</p>
+                <h3 class="projects__item__title">{{ project.title }}</h3>
+                <!-- <p class="projects__item__description">{{ project.description }}</p> -->
+            </a>
+        </div>
+    </div>
 </div>

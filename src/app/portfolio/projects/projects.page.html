@@ -8,8 +8,7 @@
     <p>A selection of my projects, created with care and dedication.</p>
     </div>
     <div *ngIf="!isLoading && projects.length">
-      <div class="subtitle--m">Recent Projects</div>
-      <app-projects [projects]="projects"></app-projects>
+      <app-projects [projects]="projects" [shouldFilterByType]="true"></app-projects>
     </div>
     <app-loader *ngIf="isLoading"></app-loader>
     <div class="flex-center">

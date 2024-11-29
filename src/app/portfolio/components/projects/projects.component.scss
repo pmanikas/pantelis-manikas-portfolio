@@ -21,3 +21,10 @@
     box-shadow: var(--base-shadow-highlight);
   }
 }
+
+.project-types {
+    display: flex;
+    justify-content: center;
+    gap: $s-m;
+    margin-bottom: $s-xxl;
+}
