@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
+import copies from './../../shared/data/copies';
 
 @Component({
-  selector: 'app-about-page',
-  templateUrl: './about.page.html',
-  styleUrls: ['./about.page.scss']
+    selector: 'app-about-page',
+    templateUrl: './about.page.html',
+    styleUrls: ['./about.page.scss']
 })
 
 export class AboutPage {
 
-  public isVisible = false;
+    public isVisible = false;
 
-  constructor() { }
+    public about: string = copies.ABOUT;
+
+    constructor() { }
 
 }

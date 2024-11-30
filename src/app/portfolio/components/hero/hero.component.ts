@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import copies from './../../../shared/data/copies';
 
 @Component({
   selector: 'app-hero',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class HeroComponent {
 
   public imageUrl: string = '/assets/images/pantelis-manikas-black-and-white.webp';
+
+  public about: string = copies.ABOUT;
 
   constructor() { }
 

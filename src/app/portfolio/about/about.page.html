@@ -10,7 +10,7 @@
     <div class="text--content">
       <div class="subtitle--m">Current Status</div>
       <h2>What do I do now?</h2>
-      <p class="hero__description">Currently, I'm the tech leader at <a href="https://restep.io" target="_blank" class="accent"><strong>Restep</strong></a> reinventing education and a Senior Front-end Developer at <a href="friskyradio.com" target="_blank" class="secondary"><strong>FRISKY Radio</strong></a> creating the next generation, music streaming Web and iOS Apps.</p>
+      <p class="hero__description" [innerHtml]="about"></p>
       <p>Additionally I'm a proud father of an awesome doggo. His name is Kyuubi. Warning! If you're sensitive or alergic to cuteness please don't <strong>click</strong> at the image below.</p>
       <div (click)="isVisible = true" class="about-image-container">
         <app-image-resource [class.is-visible]="isVisible" class="about-image" src="/assets/images/kyuubi-male-half-breed-cute-maltese-puppy.jpg" alt="Kyuubi Doggo" [width]="'600'" [height]="'800'"></app-image-resource>
