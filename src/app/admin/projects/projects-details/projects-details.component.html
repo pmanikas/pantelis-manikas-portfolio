@@ -25,8 +25,7 @@
     </div>
     <div class="form-group">
         <label for="image">Description</label>
-        <textarea id="description" name="description" class="form-control" [(ngModel)]="project.description" rows="10">
-        </textarea>
+        <app-text-editor id="description" name="description" [html]="project.description" [isDisabled]="isLoading" (htmlChange)="updateHtml($event)"></app-text-editor>
     </div>
     <br>
     <div class="flex-end">

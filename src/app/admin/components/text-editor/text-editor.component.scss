@@ -1,0 +1,10 @@
+@use './../../../../styles/abstracts' as *;
+
+.text-editor {
+    color: $c-dark;
+    background-color: transparentize($c-dark, 0.9);
+    border: 1px solid transparentize($c-dark, 0.9);
+    border-radius: var(--base-border-radius);
+    box-shadow: var(--base-shadow);
+    overflow: hidden;
+}

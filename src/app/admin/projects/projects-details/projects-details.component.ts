@@ -86,4 +86,8 @@ export class ProjectsDetailsComponent implements OnInit {
         }
       });
   }
+
+  public updateHtml(html: string): void {
+    this.project.description = html;
+  }
 }

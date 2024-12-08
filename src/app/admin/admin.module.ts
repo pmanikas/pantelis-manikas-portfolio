@@ -3,7 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { NgxEditorModule } from 'ngx-editor';
 import { AdminRoutingModule } from './admin-routing.module';
+import { SharedModule } from '../shared/shared.module';
+
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -18,8 +23,7 @@ import { UsersListComponent } from './users/users-list/users-list.component';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { SharedModule } from '../shared/shared.module';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { TextEditorComponent } from './components/text-editor/text-editor.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     ImageUploadComponent,
     TopbarComponent,
     SidebarComponent,
+    TextEditorComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +50,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    DragDropModule
+    DragDropModule,
+    NgxEditorModule
   ]
 })
 export class AdminModule { }

@@ -1,0 +1,17 @@
+@use "./../abstracts" as *;
+
+.NgxEditor {
+    min-height: 300px !important;
+    border: none !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+
+    &__MenuBar {
+        height: $s-xxl !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+    }
+
+    pre {
+        white-space: pre !important;
+    }
+}

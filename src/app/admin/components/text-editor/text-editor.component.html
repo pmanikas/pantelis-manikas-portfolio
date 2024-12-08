@@ -1,0 +1,4 @@
+<div class="text-editor">
+    <ngx-editor-menu *ngIf="editor" [editor]="editor" [toolbar]="toolbar"></ngx-editor-menu>
+    <ngx-editor *ngIf="editor" [editor]="editor" [ngModel]="html" (ngModelChange)="onHtmlChange($event)" [disabled]="isDisabled" placeholder="Type here..."></ngx-editor>
+ </div>
