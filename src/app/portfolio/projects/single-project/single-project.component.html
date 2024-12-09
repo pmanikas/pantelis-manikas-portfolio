@@ -5,7 +5,7 @@
             <div class="container">
                 <ul class="breadcrumbs text-left">
                     <li><a [routerLink]="['/projects']">Projects</a></li>
-                    <li *ngIf="project.type">{{ project.type }}</li>
+                    <li *ngIf="project.type"><a [routerLink]="['/projects', project.type]" class="type-link">{{ project.type }}</a></li>
                     <li><h1 class="title">{{ project.title }}</h1></li>
                 </ul>
             </div>

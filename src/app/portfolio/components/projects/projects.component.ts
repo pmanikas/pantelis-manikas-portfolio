@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { Project } from 'src/app/shared/models/project.model';
 
 @Component({
@@ -10,17 +10,19 @@ export class ProjectsComponent implements OnChanges {
 
     @Input() projects: Project[] = [];
     @Input() shouldFilterByType: boolean = false;
+    @Input() selectedType: string = '';
+
+    @Output() updateType: EventEmitter<string> = new EventEmitter<string>();
 
     public filteredProjects: Project[] = [];
     public types: Set<string> = new Set();
-    public selectedType: string = '';
 
     constructor() { }
 
     ngOnChanges(): void {
         if (this.projects.length > 0) {
             this.grabTypes();
-            this.filterByType('');
+            this.filterByType(this.selectedType);
         }
     }
 
@@ -39,5 +41,9 @@ export class ProjectsComponent implements OnChanges {
         }
 
         this.filteredProjects = this.projects.filter(project => project.type === type);
+    }
+
+    public onTypeSelect(type: string): void {
+        this.updateType.emit(type);
     }
 }
