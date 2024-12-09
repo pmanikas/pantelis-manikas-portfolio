@@ -3,6 +3,7 @@ export class Project {
   title: string;
   type: string;
   url: string;
+  iframeUrl?: string;
   image: string;
   description: string;
   created_date?: Date;
@@ -16,5 +17,6 @@ export class Project {
     this.title = '';
     this.type = '';
     this.url = '';
+    this.iframeUrl = '';
   }
 }

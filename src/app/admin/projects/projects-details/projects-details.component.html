@@ -24,6 +24,10 @@
         <input type="text" class="form-control" [(ngModel)]="project.url" id="url" name="url" />
     </div>
     <div class="form-group">
+        <label for="iframeUrl">iframe Url</label>
+        <input type="text" class="form-control" [(ngModel)]="project.iframeUrl" id="iframeUrl" name="iframeUrl" />
+    </div>
+    <div class="form-group">
         <label for="image">Description</label>
         <app-text-editor id="description" name="description" [html]="project.description" [isDisabled]="isLoading" (htmlChange)="updateHtml($event)"></app-text-editor>
     </div>

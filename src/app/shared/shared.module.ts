@@ -14,6 +14,7 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { PanelComponent } from './components/panel/panel.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { PanelComponent } from './components/panel/panel.component';
     IconComponent,
     DropdownComponent,
     AvatarComponent,
-    PanelComponent
+    PanelComponent,
+    SafePipe
   ],
   exports: [
     DeferLoadDirective,
@@ -47,7 +49,8 @@ import { PanelComponent } from './components/panel/panel.component';
     IconComponent,
     DropdownComponent,
     AvatarComponent,
-    PanelComponent
+    PanelComponent,
+    SafePipe
   ]
 })
 export class SharedModule { }

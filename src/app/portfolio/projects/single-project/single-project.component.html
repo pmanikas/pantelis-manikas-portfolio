@@ -1,0 +1,23 @@
+<section class="single-project-page">
+    <div class="single-project-container">
+        <app-loader *ngIf="isLoading"></app-loader>
+        <div class="text--center" *ngIf="!isLoading && project">
+            <div class="container">
+                <ul class="breadcrumbs text-left">
+                    <li><a [routerLink]="['/projects']">Projects</a></li>
+                    <li *ngIf="project.type">{{ project.type }}</li>
+                    <li><h1 class="title">{{ project.title }}</h1></li>
+                </ul>
+            </div>
+            <p class="text--content" *ngIf="project.description && project.description !== '\<p>\</p>'">{{ project.description }}</p>
+            <div class="flex-center" *ngIf="project.iframeUrl">
+                <iframe class="iframe" [src]="project.iframeUrl | safe" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div *ngIf="!isLoading && !project" class="not-found">
+            <div class="text--center text--content">
+                <h1>Project not found</h1>
+            </div>
+        </div>
+    </div>
+</section>

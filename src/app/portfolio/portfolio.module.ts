@@ -21,6 +21,7 @@ import { SocialMediaComponent } from './components/social-media/social-media.com
 import { EmailSubscriptionComponent } from './components/email-subscription/email-subscription.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroComponent } from './components/hero/hero.component';
+import { SingleProjectComponent } from './projects/single-project/single-project.component';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { HeroComponent } from './components/hero/hero.component';
     CreditsComponent,
     NavComponent,
     ProjectsComponent,
+    SingleProjectComponent,
     ServicesComponent,
     SocialMediaComponent,
     EmailSubscriptionComponent,

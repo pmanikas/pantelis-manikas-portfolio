@@ -88,6 +88,7 @@ export class ProjectsDetailsComponent implements OnInit {
   }
 
   public updateHtml(html: string): void {
-    this.project.description = html;
+    if(html === '<p></p>') this.project.description = '';
+    else this.project.description = html;
   }
 }

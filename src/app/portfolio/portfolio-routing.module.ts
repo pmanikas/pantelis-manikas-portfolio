@@ -6,6 +6,7 @@ import { ContactPage } from './contact/contact.page';
 import { HomePage } from './home/home.page';
 import { ProjectsPage } from './projects/projects.page';
 import { PortfolioComponent } from './portfolio.component';
+import { SingleProjectComponent } from './projects/single-project/single-project.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsPage
+      },
+      {
+        path: 'projects/:id',
+        component: SingleProjectComponent
       },
       {
         path: 'blog',

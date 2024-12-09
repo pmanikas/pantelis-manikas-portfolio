@@ -122,6 +122,44 @@ hr {
     }
 }
 
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-bottom: $s-m;
+
+    li {
+        display: inline-block;
+        margin-right: $s-xs;
+
+        &:last-child {
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        a {
+            color: $c-dark;
+            text-decoration: none;
+
+            &:hover {
+                color: $c-primary;
+            }
+        }
+
+        &~li::before {
+            content: '→';
+            margin: 0 $s-xs;
+        }
+    }
+
+    * {
+        display: inline-block;
+        font-style: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        margin: 0;
+    }
+}
+
 @include tablet {
   .container {
     width: $s-tablet;
