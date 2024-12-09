@@ -126,23 +126,17 @@ hr {
     display: flex;
     align-items: center;
     margin-bottom: $s-m;
+    font-size: .75rem;
 
     li {
         display: inline-block;
-        margin-right: $s-xs;
 
         &:last-child {
-            margin-right: 0;
             font-weight: bold;
         }
 
-        a {
-            color: $c-dark;
-            text-decoration: none;
-
-            &:hover {
-                color: $c-primary;
-            }
+        a:hover {
+            color: $c-primary;
         }
 
         &~li::before {
