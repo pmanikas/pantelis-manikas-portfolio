@@ -1,14 +1,18 @@
 <div class="projects">
     <div class="project-types" *ngIf="shouldFilterByType">
         <div>
-            <app-button (click)="onTypeSelect('')"
+            <a [routerLink]="['/projects', '']">
+                <app-button (click)="onTypeSelect('')"
                 [theme]="selectedType === '' ? 'primary' : 'primary--inverted'"><span class="type-text">all</span></app-button>
+            </a>
         </div>
         <div *ngFor="let type of types">
-            <app-button [theme]="type === selectedType ? 'primary' : 'primary--inverted'"
-                (click)="onTypeSelect(type)">
+            <a [routerLink]="['/projects', type]">
+                <app-button [theme]="type === selectedType ? 'primary' : 'primary--inverted'"
+                >
                 <span class="type-text">{{ type }}</span>
             </app-button>
+        </a>
         </div>
     </div>
     <div class="projects__grid">

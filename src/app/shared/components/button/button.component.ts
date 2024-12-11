@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() theme: string = 'transparent';
   @Input() size: string = 'small';
-  @Input() link: string = '';
+  @Input() link: string | string[] = '';
 
   constructor() {}
 }

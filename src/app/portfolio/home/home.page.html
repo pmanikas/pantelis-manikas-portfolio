@@ -36,7 +36,7 @@
         <app-projects [projects]="projects"></app-projects>
         <br />
         <div class="flex-center">
-            <app-button size="large" theme="primary" link="/projects">Discover more</app-button>
+            <app-button size="large" theme="primary" [link]="['/projects', '']">Discover more</app-button>
         </div>
     </div>
     <app-loader *ngIf="areProjectsLoading"></app-loader>
