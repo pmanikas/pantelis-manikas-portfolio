@@ -11,7 +11,7 @@
             </div>
             <p class="text--content" *ngIf="project.description && project.description !== '\<p>\</p>'">{{ project.description }}</p>
             <div class="flex-center" *ngIf="project.iframeUrl">
-                <iframe class="iframe" [src]="project.iframeUrl | safe" frameborder="0" allowfullscreen></iframe>
+                <iframe class="iframe" allow="microphone" [src]="project.iframeUrl | safe" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div *ngIf="!isLoading && !project" class="not-found">
