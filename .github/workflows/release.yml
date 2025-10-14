@@ -1,40 +1,39 @@
-name: Deploy App
+name: 🚀 Deploy Angular App
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main   # or whichever branch triggers deployment
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./
+
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '18.x'
+      - name: 🧩 Checkout code
+        uses: actions/checkout@v4
 
-    - name: Install Dependencies
-      run: npm install
+      - name: ⚙️ Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # or your version
 
-    - name: NPM build APP for production
-      run: npm run build
+      - name: 📦 Install dependencies
+        run: npm ci
 
-    - name: Delete Existing Files
-      run: sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'rm -rf public_html/pantelismanikas/pantelismanikas.com/*'
+      - name: 🏗️ Build Angular app
+        run: npm run ci:build
 
-    - name: Compress and Copy New Files to server
-      run : |
-            cd dist/
-            tar -czvf ../../app.tar.gz ./
-            cd ..
-            cd ..
-            sudo sshpass -p "${{ secrets.SSH_PASS }}" scp -v -o StrictHostKeyChecking=no -r app.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/pantelismanikas/pantelismanikas.com
+      - name: 🔑 Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-    - name: Uncompress new Files
-      run : sudo sshpass -p "${{ secrets.SSH_PASS }}" -v ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'cd public_html/pantelismanikas/pantelismanikas.com && tar -xzvf app.tar.gz && rm app.tar.gz'
+      - name: 📤 Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            dist/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_SERVER_PATH }}
+
